@@ -46,7 +46,9 @@ function buildIndex() {
     .then(function(posts) {
         var postList = '<ul>';
         posts.forEach(function(post) {
-            postList += '<li>' + post.title + '</li>';
+            postList += '<li>' + post.date +
+            ': ' + linkTo(post.name, post.title) +
+            '</li>';
         });
         postList += '</ul>';
         return template(postList);
@@ -66,7 +68,9 @@ function getSortedListOfPosts() {
         files.forEach(function(file) {
             all.push(fs.readFileAsync('posts/' + file)
             .then(function(data) {
-                return extractMetaData(data.toString()).metaData;
+                var metaData = extractMetaData(data.toString()).metaData;
+                metaData.name = file;
+                return metaData;
             }));
         });
         return Promise.all(all).then(function(fileInfos) {
@@ -91,6 +95,10 @@ function extractMetaData(file) {
         file: file,
         metaData: metaData
     };
+}
+
+function linkTo(post, text) {
+    return marked('[' + text + ']' + '(posts/' + post.slice(0, -3) + ')');
 }
 
 module.exports = {

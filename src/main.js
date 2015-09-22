@@ -32,7 +32,7 @@ var dispatcher = dispatch({
 function deliverPage(response, page) {
     response.writeHead(200, {'Content-Type': 'text/html'});
     response.write(page);
-    response.end('wabalubbadubdub');
+    response.end();
 }
 
 var server = http.createServer(function(request, response) {
