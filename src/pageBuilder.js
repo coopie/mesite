@@ -19,14 +19,34 @@ function buildPost(postName) {
 }
 
 function buildIndex() {
-    return new Promise(function(fulfill) {
-        return fulfill('<h1>Index Page!!!</h1>');
+    return getSortedListOfPosts()
+    .then(function(posts) {
+        console.log(JSON.stringify(posts, undefined, 4));
+        return '<h1>INDEX</h1>';
     });
 }
 
 function buildAboutPage() {
     return new Promise(function(fulfill) {
         return fulfill('<h1>About Page!!!</h1>');
+    });
+}
+
+function getSortedListOfPosts() {
+    return fs.readdirAsync('posts')
+    .then(function(files) {
+        var all = [];
+        files.forEach(function(file) {
+            all.push(fs.readFileAsync('posts/' + file)
+            .then(function(data) {
+                return extractMetaData(data.toString()).metaData;
+            }));
+        });
+        return Promise.all(all).then(function(fileInfos) {
+            return fileInfos.sort(function(a, b) {
+                return new Date(b.date) - new Date(a.date);
+            });
+        });
     });
 }
 
