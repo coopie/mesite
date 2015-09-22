@@ -1,12 +1,35 @@
-var React = require('react');
 var Promise = require('bluebird');
 var marked = require('marked');
 var fs = require('fs');
 Promise.promisifyAll(fs);
+var Handlebars = require('handlebars');
 
-var pageHeader;
+var template;
+// Builds the page template for the page to compile the main content into
+function initialise() {
+    return fs.readFileAsync('page-templates/page.html')
+    .then(function(data) {
+        page = Handlebars.compile(data.toString());
 
-var pageFooter;
+        return Promise.props({
+            head: openFileToString('page-templates/head.html'),
+            header: openFileToString('page-templates/header.html'),
+            footer: openFileToString('page-templates/footer.html')
+        }).then(function(handlebarsContext) {
+            template = function(pageContent) {
+                handlebarsContext.content = pageContent;
+                return page(handlebarsContext);
+            };
+        });
+
+        function openFileToString(path) {
+            return fs.readFileAsync(path)
+            .then(function(data) {
+                return data.toString();
+            });
+        }
+    });
+}
 
 function buildPost(postName) {
     return fs.readFileAsync('posts/' + postName + '.md')
@@ -21,14 +44,18 @@ function buildPost(postName) {
 function buildIndex() {
     return getSortedListOfPosts()
     .then(function(posts) {
-        console.log(JSON.stringify(posts, undefined, 4));
-        return '<h1>INDEX</h1>';
+        var postList = '<ul>';
+        posts.forEach(function(post) {
+            postList += '<li>' + post.title + '</li>';
+        });
+        postList += '</ul>';
+        return template(postList);
     });
 }
 
 function buildAboutPage() {
     return new Promise(function(fulfill) {
-        return fulfill('<h1>About Page!!!</h1>');
+        fulfill('<h1>About Page!!!</h1>');
     });
 }
 
@@ -51,7 +78,6 @@ function getSortedListOfPosts() {
 }
 
 var metaDataToken = '---';
-
 function extractMetaData(file) {
     var metaData;
     file = file.slice(metaDataToken.length);
@@ -68,6 +94,7 @@ function extractMetaData(file) {
 }
 
 module.exports = {
+    initialise: initialise,
     buildPost: buildPost,
     buildIndex: buildIndex,
     buildAboutPage: buildAboutPage

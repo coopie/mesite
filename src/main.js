@@ -45,6 +45,8 @@ var server = http.createServer(function(request, response) {
     }
 });
 
-server.listen(PORT, function() {
-    console.log('Server listening on: http://localhost:%s', PORT);
+pageBuilder.initialise().then(function() {
+    server.listen(PORT, function() {
+        console.log('Server listening on: http://localhost:%s', PORT);
+    });
 });
