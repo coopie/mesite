@@ -1,29 +1,39 @@
-
 var http = require('http');
-var url = require('url');
 var dispatch = require('dispatch');
+var pageBuilder = require('./pageBuilder');
 
 var PORT = 8080;
 
 var dispatcher = dispatch({
     '/': function(request, response) {
-        response.writeHead(200, {'Content-Type': 'text/plain'});
-        response.end('wabalubbadubdub');
+        pageBuilder.buildIndex()
+        .then(function(page) {
+            deliverPage(response, page);
+        });
     },
     '/about': function(request, response) {
-        response.end('wabalubbadubdub is like cool');
-    },
-    '/user/:id': function(request, response, id) {
-        response.end(id + ' I know right');
+        pageBuilder.buildAboutPage()
+        .then(function(page) {
+            deliverPage(response, page);
+        });
     },
     '/posts/:post': function(request, response, post) {
-        response.end('posterino number ' + post);
+        pageBuilder.buildPost(post)
+        .then(function(page) {
+            deliverPage(response, page);
+        });
     },
     '/:other': function(request, response) {
         response.writeHead(404);
         response.end('this is not the page you are looking for');
     }
 });
+
+function deliverPage(response, page) {
+    response.writeHead(200, {'Content-Type': 'text/html'});
+    response.write(page);
+    response.end('wabalubbadubdub');
+}
 
 var server = http.createServer(function(request, response) {
     try {
