@@ -2,7 +2,7 @@
 my personal website
 
 ## todos ##
-* [ ] Make metaData more resilient
-* [ ] Header and Footer generator
-* [ ] injecting styles easily
 * [ ] Howto guide for people to follow if they so desire
+* [ ] Nice footer
+* [ ] Get a nice picture for the header of the site
+* [ ] syntax highlighting for code?

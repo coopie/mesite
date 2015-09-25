@@ -3,11 +3,14 @@ var marked = require('marked');
 var fs = require('fs');
 Promise.promisifyAll(fs);
 var Handlebars = require('handlebars');
+var prettyDate = require('pretty-date');
 
 var template;
-// Builds the page template for the page to compile the main content into
+var postEntryTemplate;
+
+// Builds the page and postEntry templates.
 function initialise() {
-    return fs.readFileAsync('page-templates/page.html')
+    var buildPageTemplate = fs.readFileAsync('page-templates/page.html')
     .then(function(data) {
         page = Handlebars.compile(data.toString());
 
@@ -21,23 +24,34 @@ function initialise() {
                 return page(handlebarsContext);
             };
         });
-
-        function openFileToString(path) {
-            return fs.readFileAsync(path)
-            .then(function(data) {
-                return data.toString();
-            });
-        }
     });
+
+    var buildPostTemplate = fs.readFileAsync('page-templates/postEntry.html')
+    .then(function(data) {
+        postEntry = Handlebars.compile(data.toString());
+        postEntryTemplate = function(context) {
+            return postEntry(context);
+        };
+    });
+
+    return Promise.all([buildPageTemplate, buildPostTemplate]);
+
+    function openFileToString(path) {
+        return fs.readFileAsync(path)
+        .then(function(data) {
+            return data.toString();
+        });
+    }
 }
 
 function buildPost(postName) {
     return fs.readFileAsync('posts/' + postName + '.md')
     .then(function(data) {
-        var fileAndMetadata = extractMetaData(data.toString());
-        var file = fileAndMetadata.file;
-        var metaData = fileAndMetadata.metaData;
-        return template(marked(file));
+        var postAndMetadata = extractMetaData(data.toString());
+        var post = postAndMetadata.post;
+        return template(marked('# ' + postAndMetadata.title) + '\n' +
+            marked(post)
+        );
     });
 }
 
@@ -46,9 +60,11 @@ function buildIndex() {
     .then(function(posts) {
         var postList = '<ul>';
         posts.forEach(function(post) {
-            postList += '<li>' + post.date +
-            ': ' + linkTo(post.name, post.title) +
-            '</li>';
+            postList += postEntryTemplate({
+                title: post.title,
+                date: prettyDate.format(new Date(post.date)),
+                link: linkTo(post.name)
+            });
         });
         postList += '</ul>';
         return template(postList);
@@ -68,7 +84,7 @@ function getSortedListOfPosts() {
         files.forEach(function(file) {
             all.push(fs.readFileAsync('posts/' + file)
             .then(function(data) {
-                var metaData = extractMetaData(data.toString()).metaData;
+                var metaData = extractMetaData(data.toString());
                 metaData.name = file;
                 return metaData;
             }));
@@ -91,14 +107,12 @@ function extractMetaData(file) {
 
     file = file.slice(file.indexOf(metaDataToken) + metaDataToken.length);
 
-    return {
-        file: file,
-        metaData: metaData
-    };
+    metaData.post = file;
+    return metaData;
 }
 
 function linkTo(post, text) {
-    return marked('## [' + text + ']' + '(posts/' + post.slice(0, -3) + ')');
+    return 'posts/' + post.slice(0, (-1) * '.md'.length);
 }
 
 module.exports = {

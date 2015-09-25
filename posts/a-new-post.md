@@ -1,6 +1,6 @@
 ---
 {
-    "title": "Today I tested out how my website works",
+    "title": "Today I tested out how my website works, with a really long title to make sure I don't break anything",
     "description": "This should show up",
     "image": "some/otherPath/picture.png",
     "date": "2015-08-23"
