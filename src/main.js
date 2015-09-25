@@ -25,7 +25,7 @@ var dispatcher = dispatch({
     },
     '/:other': function(request, response) {
         response.writeHead(404);
-        response.end('this is not the page you are looking for');
+        response.end('404: There\'s nothing here');
     }
 });
 

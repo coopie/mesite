@@ -8,4 +8,4 @@ my personal website
 * [ ] syntax highlighting for code?
 * [ ] dates in posts
 * [ ] github url
-* [ ] 
+* [ ] local pictures

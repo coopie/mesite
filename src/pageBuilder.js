@@ -56,6 +56,10 @@ function buildPost(postName) {
 }
 
 function buildIndex() {
+    var aboutAndGithub = '<span style="text-align:center">' +
+        '<h3>' + '<a href="https://github.com/coopie">github</a>' +
+        ' \t <a href="/about">about me</a></h3>' +
+        '</span>';
     return getSortedListOfPosts()
     .then(function(posts) {
         var postList = '<ul>';
@@ -67,14 +71,12 @@ function buildIndex() {
             });
         });
         postList += '</ul>';
-        return template(postList);
+        return template(aboutAndGithub + postList);
     });
 }
 
 function buildAboutPage() {
-    return new Promise(function(fulfill) {
-        fulfill('<h1>About Page!!!</h1>');
-    });
+    return buildPost('aboutme');
 }
 
 function getSortedListOfPosts() {
@@ -82,6 +84,9 @@ function getSortedListOfPosts() {
     .then(function(files) {
         var all = [];
         files.forEach(function(file) {
+            if (file === 'aboutme.md') {
+                return;
+            }
             all.push(fs.readFileAsync('posts/' + file)
             .then(function(data) {
                 var metaData = extractMetaData(data.toString());
