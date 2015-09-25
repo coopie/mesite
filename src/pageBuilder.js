@@ -37,7 +37,7 @@ function buildPost(postName) {
         var fileAndMetadata = extractMetaData(data.toString());
         var file = fileAndMetadata.file;
         var metaData = fileAndMetadata.metaData;
-        return marked(file);
+        return template(marked(file));
     });
 }
 
@@ -98,7 +98,7 @@ function extractMetaData(file) {
 }
 
 function linkTo(post, text) {
-    return marked('[' + text + ']' + '(posts/' + post.slice(0, -3) + ')');
+    return marked('## [' + text + ']' + '(posts/' + post.slice(0, -3) + ')');
 }
 
 module.exports = {
