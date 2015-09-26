@@ -31,7 +31,7 @@ var dispatcher = dispatch({
 
 function deliverPage(response, page) {
     response.writeHead(200, {'Content-Type': 'text/html'});
-    response.write(page);
+    response.write(page, 'utf8');
     response.end();
 }
 

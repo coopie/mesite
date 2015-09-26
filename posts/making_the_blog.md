@@ -7,7 +7,7 @@
 
 This being my first official post, I see it only fitting to talk about why and how I made this website. check out the [github repo](https://github.com/coopie/mesite) for it if you want to see the source.
 
-I have wanted to have a blog ever since I read the [still drinking post](http://www.stilldrinking.org/programming-sucks) about how horrible developing can actually be. If you haven't already read it, i seriously recommend it. It also gives me a chance to try and coherently organise my thoughts in text, something I have not really done since I was in school writing history essays.
+I have wanted to have a blog ever since I read the [still drinking post](http://www.stilldrinking.org/programming-sucks) about how horrible developing can actually be. If you haven't already read it, I seriously recommend it. It also gives me a chance to try and coherently organise my thoughts in text, something I have not really done since I was in school writing history essays.
 
 ## Making the Website ##
 Before making this website, I had a look around at some currently existing blogging frameworks to try and fins something that sounded appealing to me.

@@ -1,8 +1,6 @@
 ---
 {
-    "title": "This is The earliest post, yup it sure is",
-    "description": "I will be going to uni soon!",
-    "image": "some/path/to/picture.png",
+    "title": "Sandbox Post with Lots of Different Things in",
     "date": "2015-09-22"
 }
 ---

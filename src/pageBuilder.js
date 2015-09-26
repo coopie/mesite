@@ -17,7 +17,7 @@ function initialise() {
         return Promise.props({
             head: openFileToString('page-templates/head.html'),
             header: openFileToString('page-templates/header.html'),
-            footer: openFileToString('page-templates/footer.html')
+            footer: openFileToString('page-templates/footer.html', 'utf-8')
         }).then(function(handlebarsContext) {
             template = function(pageContent) {
                 handlebarsContext.content = pageContent;
