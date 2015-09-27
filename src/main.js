@@ -2,7 +2,8 @@ var http = require('http');
 var dispatch = require('dispatch');
 var pageBuilder = require('./pageBuilder');
 
-var PORT = process.env.OPENSHIFT_NODEJS_PORT || 8080;
+var PORT = process.env.OPENSHIFT_NODEJS_PORT || 8087;
+console.log(process);
 
 var dispatcher = dispatch({
     '/': function(request, response) {
