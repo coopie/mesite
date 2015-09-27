@@ -1,0 +1,35 @@
+{
+  "name": "Sam Coope's Personal Website Server",
+  "version": "1.0.0",
+  "description": "Server for my blogging site",
+  "keywords": [
+    "Sam Coope",
+    "Node.js",
+    "blog",
+    "programming"
+  ],
+  "author": {
+    "name": "Sam Coope",
+    "email": "sam.j.coope@gmail.com",
+    "url": "http://samcoope.com"
+  },
+  "homepage": "/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/coopie/mesite"
+  },
+
+  "engines": {
+    "node": ">= 0.6.0",
+    "npm": ">= 1.0.0"
+  },
+
+  "dependencies": {
+
+  },
+  "devDependencies": {},
+  "bundleDependencies": [],
+
+  "private": true,
+  "main": "src/main.js"
+}
