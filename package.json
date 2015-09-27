@@ -1,5 +1,5 @@
 {
-  "name": "Sam Coope's Personal Website Server",
+  "name": "sam-coope-blog",
   "version": "1.0.0",
   "description": "Server for my blogging site",
   "keywords": [
@@ -13,7 +13,7 @@
     "email": "sam.j.coope@gmail.com",
     "url": "http://samcoope.com"
   },
-  "homepage": "/",
+  "homepage": "https://github.com/coopie/mesite",
   "repository": {
     "type": "git",
     "url": "https://github.com/coopie/mesite"
