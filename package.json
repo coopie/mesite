@@ -18,7 +18,12 @@
     "node": ">= 0.6.0",
     "npm": ">= 1.0.0"
   },
-  "dependencies": {},
+  "dependencies": {
+    "bluebird": "^2.10.1",
+    "express": "^4.13.3",
+    "handlebars": "^4.0.3",
+    "pretty-date": "^0.2.0"
+  },
   "devDependencies": {},
   "bundleDependencies": [],
   "private": true,
