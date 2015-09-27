@@ -26,7 +26,7 @@ function initialise() {
         });
     });
 
-    var buildPostTemplate = fs.readFileAsync('page-templates/postEntry.html')
+    var buildPostTemplate = fs.readFileAsync('page-templates/postentry.html')
     .then(function(data) {
         postEntry = Handlebars.compile(data.toString());
         postEntryTemplate = function(context) {

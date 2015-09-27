@@ -22,6 +22,7 @@
     "bluebird": "^2.10.1",
     "express": "^4.13.3",
     "handlebars": "^4.0.3",
+    "marked": "^0.3.5",
     "pretty-date": "^0.2.0"
   },
   "devDependencies": {},
@@ -34,5 +35,5 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "license": "ISC"
+  "license": "MIT"
 }
