@@ -8,28 +8,26 @@
     "blog",
     "programming"
   ],
-  "author": {
-    "name": "Sam Coope",
-    "email": "sam.j.coope@gmail.com",
-    "url": "http://samcoope.com"
-  },
+  "author": "Sam Coope <sam.j.coope@gmail.com> (http://samcoope.com)",
   "homepage": "https://github.com/coopie/mesite",
   "repository": {
     "type": "git",
-    "url": "https://github.com/coopie/mesite"
+    "url": "git+https://github.com/coopie/mesite.git"
   },
-
   "engines": {
     "node": ">= 0.6.0",
     "npm": ">= 1.0.0"
   },
-
-  "dependencies": {
-
-  },
+  "dependencies": {},
   "devDependencies": {},
   "bundleDependencies": [],
-
   "private": true,
-  "main": "src/main.js"
+  "main": "src/main.js",
+  "bugs": {
+    "url": "https://github.com/coopie/mesite/issues"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "ISC"
 }
