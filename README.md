@@ -1,10 +1,7 @@
 # mesite
 My personal website, built from scratch.
+is is hosted [here](www.samcoope.com)
 
 ## todos ##
 * [ ] syntax highlighting for code?
-* [ ] dates in posts
-* [ ] local pictures
-* [ ] sort out spelling mistakes in story and expand
-* [ ] sort out links not being flashy (not changing color)
 * [ ] Find nice way of mirroring directory with openshift one

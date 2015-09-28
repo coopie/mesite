@@ -56,11 +56,13 @@ function buildPost(postName) {
     .then(function(data) {
         var postAndMetadata = extractMetaData(data.toString());
         var post = postAndMetadata.post;
-        var date =  dateFormatter.format(new Date(postAndMetadata.date));
-        return template(marked('# ' + postAndMetadata.title) + '\n' +
-            marked('#### *' + date + '*') + '\n' +
-            marked(post)
-        );
+        var postHeader = marked('# ' + postAndMetadata.title) + '\n';
+        if (postName !== 'aboutme') {
+            var date =  dateFormatter.format(new Date(postAndMetadata.date));
+            postContent += marked('#### *' + date + '*') + '\n';
+        }
+        return template(postHeader + marked(post));
+
     });
 }
 
