@@ -1,10 +1,9 @@
 ---
 {
-    "title": "Making This Blogging Website: My First Proper Go at Web Dev",
-    "date": "2015-09-25"
+    "title": "Making This Blogging Website: My First Attempt at Web Development",
+    "date": "2015-09-28"
 }
 ---
-
 This being my first official post, I see it only fitting to talk about why and how I made this website. Check out the [github repo](https://github.com/coopie/mesite) for it if you want to see the source.
 
 I have wanted to have a blog ever since I read the [still drinking post](http://www.stilldrinking.org/programming-sucks) about how horrible developing can actually be. If you haven't already read it, I seriously recommend it.
@@ -39,11 +38,23 @@ Luckily, this was an easy question to answer. I had just finished working for Bl
 
 The only real challenge to making the core of the website was getting all of my posts, sorting them by age and presenting them on the main page of the site.
 
-I couldn't find any way of elegantly assigning metaData to my markdown files, so I decided to do it myself. On the top of every file is a JSON which is sliced off from the file and parsed. This object contains data like the title, the date it was written, and anything else that is needed in the future (a url to a picture perhaps). This means that generating the ordered list of posts goes as follows:
+I couldn't find any way of elegantly assigning metaData to my markdown files, so I decided to do it myself. On the top of every file is a JSON which is sliced off from the file and parsed. This object contains data like the title, the date it was written, and anything else that is needed in the future (a url to a picture perhaps). The top of the markdown file of this post looks like this:
+
+```javascript
+---
+{
+    "title": "Making This Blogging Website: My First Attempt at Web Development",
+    "date": "2015-09-28"
+}
+---
+This being my first official post...
+```
+
+This means that generating the ordered list of posts goes as follows:
 
 1. Get all of the files' metadata
 * Sort by date
-* Render in a list
+* Build the post entries using the metadata and handlebars.
 
 ### Page Design ###
 I wanted the design to be clean, but also colorful. I have seen way to many blogs which are just black and white, and that just looks kind of soulless in my opinion.

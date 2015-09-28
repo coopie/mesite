@@ -61,6 +61,10 @@ function buildPost(postName) {
             var date =  dateFormatter.format(new Date(postAndMetadata.date));
             postHeader += marked('#### *' + date + '*') + '\n';
         }
+        postHeader += '<link rel="stylesheet" href="/resource/styles/code.css">' +
+            '<script src="/resource/script/highlight.pack.js"></script>' +
+            '<script>hljs.initHighlightingOnLoad();</script>';
+
         return template(postHeader + marked(post));
 
     });
