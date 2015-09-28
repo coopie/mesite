@@ -4,6 +4,8 @@
     "date": "2015-09-22"
 }
 ---
+[what is this?](/resource/images/me.jpeg)
+
 *Hello!* this is a test post for checking how things Look
 
 ---

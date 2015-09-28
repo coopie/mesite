@@ -7,3 +7,4 @@ My personal website, built from scratch.
 * [ ] local pictures
 * [ ] sort out spelling mistakes in story and expand
 * [ ] sort out links not being flashy (not changing color)
+* [ ] Find nice way of mirroring directory with openshift one

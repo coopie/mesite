@@ -30,6 +30,8 @@ server.get('/:other', function(request, response) {
     response.end('404: There\'s nothing here');
 });
 
+server.use('/resource', express.static(__dirname + '/../resource'));
+
 function deliverPage(response, page) {
     response.writeHead(200, {'Content-Type': 'text/html'});
     response.write(page);
