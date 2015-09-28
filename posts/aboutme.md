@@ -8,4 +8,4 @@
 
 If you are interested in me working for you, check out my [linkedin page](https://uk.linkedin.com/in/samcoope)
 
-If you are really interested, you can have a look at [my CV](/cv.pdf)
+If you are really interested, you can have a look at [my CV](/resource/CV.pdf)
