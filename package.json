@@ -22,6 +22,7 @@
     "bluebird": "^2.10.1",
     "express": "^4.13.3",
     "handlebars": "^4.0.3",
+    "intl": "^1.0.0",
     "marked": "^0.3.5",
     "pretty-date": "^0.2.0"
   },

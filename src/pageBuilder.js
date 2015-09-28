@@ -4,9 +4,16 @@ var fs = require('fs');
 Promise.promisifyAll(fs);
 var Handlebars = require('handlebars');
 var prettyDate = require('pretty-date');
+var Intl = require('intl');
 
 var template;
 var postEntryTemplate;
+var dateFormatter = new Intl.DateTimeFormat('en-UK', {
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+});
 
 // Builds the page and postEntry templates.
 function initialise() {
@@ -49,7 +56,9 @@ function buildPost(postName) {
     .then(function(data) {
         var postAndMetadata = extractMetaData(data.toString());
         var post = postAndMetadata.post;
+        var date =  dateFormatter.format(new Date(postAndMetadata.date));
         return template(marked('# ' + postAndMetadata.title) + '\n' +
+            marked('#### *' + date + '*') + '\n' +
             marked(post)
         );
     });
