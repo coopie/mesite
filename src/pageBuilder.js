@@ -77,7 +77,7 @@ function buildIndex() {
         '</span>';
     return getSortedListOfPosts()
     .then(function(posts) {
-        var postList = '<ul>';
+        var postList = '';
         posts.forEach(function(post) {
             postList += postEntryTemplate({
                 title: post.title,
@@ -85,7 +85,7 @@ function buildIndex() {
                 link: linkTo(post.name)
             });
         });
-        postList += '</ul>';
+        postList += '';
         return template(aboutAndGithub + postList);
     });
 }
