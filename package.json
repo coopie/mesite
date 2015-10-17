@@ -34,7 +34,7 @@
     "url": "https://github.com/coopie/mesite/issues"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node src/main.js"
   },
   "license": "MIT"
 }
