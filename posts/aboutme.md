@@ -1,14 +1,12 @@
 ---
-{
-    "title": "About Me"
-}
+{}
 ---
-
-## Who am I?
 
 Hello.
 
-The name's Sam Coope, and I'm from the shire , Worcestershire to be precise, about ten minutes away from Tolkien's house.
+<img src="/resource/images/face-drawing1.jpg" width="inherit">
+
+The name's Sam, and I'm from the shire , Worcestershire to be precise, about ten minutes away from Tolkien's house.
 
 As many do, I moved to somewhere else to study. For me that place was West London, to study computing at Imperial College London. I now live in Parsons Green with 5 of my good friends.
 
@@ -33,4 +31,4 @@ If you would like to send a friendly email, or have a better name for my blog, s
 
 If you are interested in me working for you, check out my [linkedin page](https://uk.linkedin.com/in/samcoope)
 
-If you are really interested, you can have a look at [my CV](/resource/CV.pdf)
+If you are really interested, you can have a look at [my CV](https://www.dropbox.com/s/orodv9pakmzbvel/Sam%20Coope%20-%20CV.pdf?dl=0)

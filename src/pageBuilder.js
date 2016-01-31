@@ -57,7 +57,9 @@ function buildPost(postName) {
     .then(function(data) {
         var postAndMetadata = extractMetaData(data.toString());
         var post = postAndMetadata.post;
-        var postHeader = marked('# ' + postAndMetadata.title) + '\n';
+        // title = postAndMetadata.title || "";
+        // var postHeader = marked('# ' + title + '\n');
+        var postHeader = postAndMetadata.title ? marked('# ' + postAndMetadata.title + '\n') : '';
         if (postName !== 'aboutme') {
             var date =  dateFormatter.format(new Date(postAndMetadata.date));
             postHeader += marked('#### *' + date + '*') + '\n';

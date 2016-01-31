@@ -1,7 +1,9 @@
 body {
     font-family: "Merriweather", sans-serif;
     font-size: 16px;
-    color: #66595c;
+    /*color: #66595c;*/
+    /*color: #443b3e;*/
+    color: #52474b;
     margin: 0px 0px 0px 0px;
 }
 h1, h2, h3, h4, h5 {
@@ -10,6 +12,10 @@ h1, h2, h3, h4, h5 {
 }
 p , li{
     line-height: 150%;
+}
+img {
+    width: 750px;
+    border-radius: 10px;
 }
 table {
     width: 100%;
