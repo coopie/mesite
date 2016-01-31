@@ -23,11 +23,12 @@ function initialise() {
 
         return Promise.props({
             head: openFileToString('page-templates/head.html'),
-            header: openFileToString('page-templates/header.html'),
-            footer: openFileToString('page-templates/footer.html', 'utf-8')
+            header: openFileToString('page-templates/header.html')
+            // footer: openFileToString('page-templates/footer.html', 'utf-8')
         }).then(function(handlebarsContext) {
-            template = function(pageContent) {
-                handlebarsContext.content = pageContent;
+            template = function(pageSpecificContent) {
+                handlebarsContext.content = pageSpecificContent.mainContent;
+                handlebarsContext.footer = pageSpecificContent.footer;
                 return page(handlebarsContext);
             };
         });
@@ -65,7 +66,10 @@ function buildPost(postName) {
             '<script src="/resource/script/highlight.pack.js"></script>' +
             '<script>hljs.initHighlightingOnLoad();</script>';
 
-        return template(postHeader + marked(post));
+        return template({
+            mainContent: postHeader + marked(post),
+            footer: postAndMetadata.footer || 'hoc quoque finiet  גם זה יעבור‎  لا شيء يدوم this too shall pass'
+        });
 
     });
 }
@@ -82,11 +86,14 @@ function buildIndex() {
             postList += postEntryTemplate({
                 title: post.title,
                 date: prettyDate.format(new Date(post.date)),
-                link: linkTo(post.name)
+                link: linkTo(post.name),
             });
         });
         postList += '';
-        return template(aboutAndGithub + postList);
+        return template({
+            mainContent: aboutAndGithub + postList,
+            footer: 'We learn through repetition. We learn through repetition. We learn through repetition'
+        });
     });
 }
 

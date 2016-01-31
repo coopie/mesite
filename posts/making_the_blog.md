@@ -69,7 +69,7 @@ This was not fun. Not fun at all.
 
 ### First Attempt ###
 
-I originally tried to host my site with [asmallorange](http://www.asmallorange.com). This was the first mistake. Although they offered a very small hosting package (perfect for a small blog like this), my virtual machine was down more than half the time I wanted to access it to edit things. After reading around I quickly saw that it was not just me, but almost everyone using their service that complained about awful downtimes.
+I originally tried to host my site with [asmallorange](http://www.asmallorange.com). This was the first mistake. The service was so bad that my virtual machine was down more than half the time I wanted to access it to edit things. After reading around I quickly saw that it was not just me, but almost everyone using their service that complained about awful downtimes.
 
 It also felt like I was still buying more than I needed: I just needed some machine to run my Node instance, and this service was offering database help, SEO, help installing wordpress, nothing that was useful to me at all. Luckily, they offer a money back guarantee if you want to leave their service before 6 months, so I left.
 

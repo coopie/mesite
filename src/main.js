@@ -4,8 +4,9 @@ var express = require('express');
 
 var server = express();
 
-var PORT = process.env.OPENSHIFT_NODEJS_PORT || 8087;
-var IPADDRESS = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';
+var PORT = process.env.OPENSHIFT_NODEJS_PORT || 8080;
+var IPADDRESS = process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0';
+console.log('ip is: ', IPADDRESS);
 
 server.get('/', function(request, response) {
     pageBuilder.buildIndex()

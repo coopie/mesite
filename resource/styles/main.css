@@ -1,7 +1,15 @@
 body {
-    font-family: Helvetica;
-    font-size: 18px;
+    font-family: "Merriweather", sans-serif;
+    font-size: 16px;
+    color: #66595c;
     margin: 0px 0px 0px 0px;
+}
+h1, h2, h3, h4, h5 {
+    font-family: "Quicksand", sans-serif;
+    font-weight: 700;
+}
+p , li{
+    line-height: 150%;
 }
 table {
     width: 100%;
@@ -99,11 +107,11 @@ a#titleLink:visited {
 }
 a#titleLink:hover {
     color: #008800;
-    text-decoration: underline;
+    text-decoration: none;
 }
 a#titleLink:active {
     color: #ff00ff;
-    text-decoration: underline;
+    text-decoration: none;
 }
 .postTitle a:link {
     color: #003399;
