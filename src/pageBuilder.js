@@ -62,7 +62,7 @@ function buildPost(postName) {
         var postHeader = postAndMetadata.title ? marked('# ' + postAndMetadata.title + '\n') : '';
         if (postName !== 'aboutme') {
             var date =  dateFormatter.format(new Date(postAndMetadata.date));
-            postHeader += marked('#### *' + date + '*') + '\n';
+            postHeader += marked('##### *' + date + '*') + '\n';
         }
         postHeader += '<link rel="stylesheet" href="/resource/styles/code.css">' +
             '<script src="/resource/script/highlight.pack.js"></script>' +
