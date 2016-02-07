@@ -57,7 +57,7 @@ This means that generating the ordered list of posts goes as follows:
 * Build the post entries using the metadata and handlebars.
 
 ### Page Design ###
-I wanted the design to be clean, but also colorful. I have seen way to many blogs which are just black and white, and that just looks kind of soulless in my opinion.
+I wanted the design to be clean, but also colorful. I have seen way too many blogs which are just black and white, and that just looks kind of soulless in my opinion.
 
 I couldn't think of what to put in the footer of my site; most people have their github and twitter linked there, but instead I chose my favorite motto: 'this too shall pass'. This motto is so old and so widely used that almost every language has its own version, so I also have it there in latin, hebrew and arabic for good measure. The motto is meant to stress that nothing lasts forever, be it good or bad, and that we should live our lives understanding that nothing is permanent, including ourselves.
 

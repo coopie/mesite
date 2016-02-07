@@ -1,5 +1,6 @@
 body {
-    font-family: "Merriweather", sans-serif;
+    /*font-family: "Merriweather", sans-serif;*/
+    font-family: "Helvetic Neue", sans-serif;
     font-size: 16px;
     /*color: #66595c;*/
     /*color: #443b3e;*/
@@ -8,13 +9,19 @@ body {
 }
 h1, h2, h3, h4 {
     font-family: "Quicksand", sans-serif;
-    font-weight: 700;
+    font-weight: 400;
 }
 p , li{
     line-height: 150%;
 }
+li {
+    padding-bottom: 10px;
+}
+strong {
+    color: #4d004c;
+}
 img {
-    width: 750px;
+    width: 100%;
     border-radius: 10px;
 }
 table {
@@ -37,6 +44,13 @@ th {
 tr.alt td {
     color: #000000;
     background-color: #c2c2d6;
+}
+blockquote {
+  background: #f9f9f9;
+  border-left: 10px solid #ccc;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  quotes: "\201C""\201D""\2018""\2019";
 }
 #mainWindow {
     overflow: auto;
@@ -152,4 +166,5 @@ a#titleLink:active {
     margin-top: -60px;
     height: 60px;
     clear:both;
+    font-family: "Merriweather";
 }
