@@ -26,6 +26,7 @@ executable fast-backend-exe
   build-depends:       base
                      , fast-backend
                      , zeromq4-haskell
+                     , bytestring
   default-language:    Haskell2010
 
 test-suite fast-backend-test
