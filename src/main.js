@@ -1,31 +1,26 @@
 var http = require('http');
 var pageBuilder = require('./pageBuilder');
 var express = require('express');
-var BlogLogger = require('./blogLogger');
 
 var server = express();
-var logger = new BlogLogger();
 
 var PORT = process.env.OPENSHIFT_NODEJS_PORT || 8080;
 var IPADDRESS = process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0';
 console.log('ip is: ', IPADDRESS);
 
 server.get('/', function(request, response) {
-    logger.tick('index');
     pageBuilder.buildIndex()
     .then(function(page) {
         deliverPage(response, page);
     });
 });
 server.get('/posts/:post', function(request, response) {
-    logger.tick(request.params.post);
     pageBuilder.buildPost(request.params.post)
     .then(function(page) {
         deliverPage(response, page);
     });
 });
 server.get('/about', function(request, response) {
-    logger.tick('about');
     pageBuilder.buildAboutPage()
     .then(function(page) {
         deliverPage(response, page);

@@ -9,3 +9,5 @@ is is hosted [here](www.samcoope.com)
 
 Brandon Grotesque
 line height = 170%, and lists too
+
+bloomberg style reading bar?
