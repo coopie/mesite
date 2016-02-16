@@ -45,8 +45,6 @@ We were given a dataset of people talking about embarrasing/happy/sad/funny mome
 
 Most of my work on the project was video analysis, data preparation and a little bit of help with the neural network training, so I'll show you the stuff I know about in the project.
 
-Enough talk, lets show you the interesting stuff that we did.
-
 ### Face Tracker ###
 
 For video analysis, the aim was to monitor the bloodflow in someone's face. We did this by looking at the green intensity of the subjects' face (based on [this paper](http://www.cv-foundation.org/openaccess/content_cvpr_2014/papers/Li_Remote_Heart_Rate_2014_CVPR_paper.pdf)).
@@ -67,7 +65,7 @@ Here you can see an example of the face tracker working on a subject in our trai
 
 We used [keras](http://github.com/fchollet/keras) for making and running our deep neural nets. If you are curious to try some deep learning, this is all of the benefit of high performance CUDA in a nicely made python framework.
 
-These were the four different approaches to audio we attempted. For video, we only used the CNN-RNN architecture.
+These were the four different approaches to audio we attempted. For video, we only used the CNN-RNN architecture (the one on the right).
 
 <style>
 img.customPicture {
