@@ -51,7 +51,7 @@ Enough talk, lets show you the interesting stuff that we did.
 
 For video analysis, the aim was to monitor the bloodflow in someone's face. We did this by looking at the green intensity of the subjects' face (based on [this paper](http://www.cv-foundation.org/openaccess/content_cvpr_2014/papers/Li_Remote_Heart_Rate_2014_CVPR_paper.pdf)).
 
-In order to do this, you need to track the position of a person's face so you know which pixels are showing someone's face. This is a bit more tricky than it sounds: most face trackers out there fail really, really soft. What that means is that if the face tracker is having a hard time finding the subject in the video, they usually then start tracking some blip of dust on the wall, which would completely contaminate the data we have. (look for a face tracker doing this).
+In order to do this, you need to track the position of a person's face so you know which pixels are showing someone's face. This is a bit more tricky than it sounds: most face trackers out there fail really, really soft. What that means is that if the face tracker is having a hard time finding the subject in the video, they usually then start tracking some blip of dust on the wall, which would completely contaminate the data we have.
 
 Also, many of these face trackers are quite processor heavy, which makes the dream of using this in a real time streaming service very difficult. Some of these trackers could run at around 10fps on a desktop machine, which is just way too slow.
 
