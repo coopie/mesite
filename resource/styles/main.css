@@ -56,18 +56,18 @@ blockquote {
     overflow: auto;
     padding-bottom: 60px
 }
-.mainContent {
+#mainContent {
     width: 750px ;
     margin-left: auto ;
     margin-right: auto ;
 }
-.mainContent h1 {
+#mainContent h1 {
     color: #00248f
 }
-.mainContent h2 {
+#mainContent h2 {
     color: #800000;
 }
-.mainContent h3 {
+#mainContent h3 {
     color: #006600
 }
 header.pageHeader {

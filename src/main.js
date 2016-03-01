@@ -8,6 +8,9 @@ var PORT = process.env.OPENSHIFT_NODEJS_PORT || 8080;
 var IPADDRESS = process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0';
 console.log('ip is: ', IPADDRESS);
 
+server.use('/resource', express.static(__dirname + '/../resource'));
+server.use('/mandelbrot', express.static(__dirname + '/mandelbrot'));
+
 server.get('/', function(request, response) {
     pageBuilder.buildIndex()
     .then(function(page) {
@@ -26,12 +29,18 @@ server.get('/about', function(request, response) {
         deliverPage(response, page);
     });
 });
+
+server.get('/app/:app', function(request, response) {
+    pageBuilder.buildAppPage(request.params.app)
+    .then(function(page) {
+        deliverPage(response, page);
+    });
+});
+
 server.get('/:other', function(request, response) {
     response.writeHead(404);
     response.end('404: There\'s nothing here');
 });
-
-server.use('/resource', express.static(__dirname + '/../resource'));
 
 function deliverPage(response, page) {
     response.writeHead(200, {'Content-Type': 'text/html'});

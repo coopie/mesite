@@ -20,10 +20,13 @@
   },
   "dependencies": {
     "bluebird": "^2.10.1",
+    "browserify": "^13.0.0",
     "express": "^4.13.3",
     "handlebars": "^4.0.3",
     "intl": "^1.0.0",
+    "istanbul": "^0.4.2",
     "marked": "^0.3.5",
+    "mocha": "^2.4.5",
     "pretty-date": "^0.2.0"
   },
   "devDependencies": {},
@@ -34,7 +37,8 @@
     "url": "https://github.com/coopie/mesite/issues"
   },
   "scripts": {
-    "start": "node src/main.js"
+    "start": "./start.sh",
+    "test": "istanbul cover node_modules/.bin/_mocha -- -- test/**.t.js"
   },
   "license": "MIT"
 }

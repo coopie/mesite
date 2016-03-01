@@ -76,6 +76,26 @@ function buildPost(postName) {
     });
 }
 
+function buildAppPage(appName) {
+    var appContentPath = '';
+    switch (appName) {
+        case 'mandelbrot':
+            appContentPath = 'src/mandelbrot/mandelbrot.html';
+            break;
+        default:
+
+    }
+    return fs.readFileAsync(appContentPath)
+    .then(function(data) {
+
+        return template({
+            mainContent: data.toString(),
+            footer: 'footerino'
+        });
+    });
+
+}
+
 function buildIndex() {
     var aboutAndGithub = '<span style="text-align:center">' +
         '<h3>' + '<a href="https://github.com/coopie">github</a>' +
@@ -148,5 +168,6 @@ module.exports = {
     initialise: initialise,
     buildPost: buildPost,
     buildIndex: buildIndex,
-    buildAboutPage: buildAboutPage
+    buildAboutPage: buildAboutPage,
+    buildAppPage: buildAppPage
 };
