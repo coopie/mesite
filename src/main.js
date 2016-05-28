@@ -1,4 +1,3 @@
-var http = require('http');
 var pageBuilder = require('./pageBuilder');
 var express = require('express');
 

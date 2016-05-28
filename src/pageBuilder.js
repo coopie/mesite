@@ -78,8 +78,8 @@ function buildPost(postName) {
 
 function buildIndex() {
     var aboutAndGithub = '<span style="text-align:center">' +
-        '<h3>' + '<a href="https://github.com/coopie">github</a>' +
-        ' \t <a href="/about">about me</a></h3>' +
+        '<h3>' + '<a href="https://github.com/coopie" class="samLink">github</a>' +
+        ' \t <a href="/about" class="samLink">about me</a></h3>' +
         '</span>';
     return getSortedListOfPosts()
     .then(function(posts) {
