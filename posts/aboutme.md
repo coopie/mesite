@@ -32,3 +32,5 @@ If you would like to send a friendly email, or have a better name for my blog, s
 If you are interested in me working for you, check out my [linkedin page](https://uk.linkedin.com/in/samcoope)
 
 If you are really interested, you can have a look at [my CV](https://www.dropbox.com/s/orodv9pakmzbvel/Sam%20Coope%20-%20CV.pdf?dl=0)
+
+If you are really really interested, have a look at my [full resume](/resume)

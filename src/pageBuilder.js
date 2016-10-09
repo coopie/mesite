@@ -61,8 +61,11 @@ function buildPost(postName) {
         // var postHeader = marked('# ' + title + '\n');
         var postHeader = postAndMetadata.title ? marked('# ' + postAndMetadata.title + '\n') : '';
         if (postName !== 'aboutme') {
-            var date =  dateFormatter.format(new Date(postAndMetadata.date));
-            postHeader += marked('##### *' + date + '*') + '\n';
+            if (postAndMetadata.date) {
+                var date = dateFormatter.format(new Date(postAndMetadata.date));
+                postHeader += marked('##### *' + date + '*') + '\n';
+            }
+
         }
         postHeader += '<link rel="stylesheet" href="/resource/styles/code.css">' +
             '<script src="/resource/script/highlight.pack.js"></script>' +
@@ -77,10 +80,14 @@ function buildPost(postName) {
 }
 
 function buildIndex() {
-    var aboutAndGithub = '<span style="text-align:center">' +
-        '<h3>' + '<a href="https://github.com/coopie" class="samLink">github</a>' +
-        ' \t <a href="/about" class="samLink">about me</a></h3>' +
-        '</span>';
+    var aboutAndGithub = `
+    <span style="text-align:center">
+        <h3>
+            <a href="https://github.com/coopie" class="samLink">github</a>
+            <a href="/about" class="samLink">about me</a>
+        </h3>
+    </span>
+    `
     return getSortedListOfPosts()
     .then(function(posts) {
         var postList = '';
@@ -108,7 +115,7 @@ function getSortedListOfPosts() {
     .then(function(files) {
         var all = [];
         files.forEach(function(file) {
-            if (file === 'aboutme.md') {
+            if (file === 'aboutme.md' || file == 'resume.md') {
                 return;
             }
             all.push(fs.readFileAsync('posts/' + file)

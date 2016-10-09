@@ -19,6 +19,12 @@ server.get('/posts/:post', function(request, response) {
         deliverPage(response, page);
     });
 });
+server.get('/resume', function(request, response) {
+    pageBuilder.buildPost('resume')
+    .then(function(page) {
+        deliverPage(response, page);
+    });
+});
 server.get('/about', function(request, response) {
     pageBuilder.buildAboutPage()
     .then(function(page) {

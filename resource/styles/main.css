@@ -56,6 +56,7 @@ blockquote {
     overflow: auto;
     padding-bottom: 60px
 }
+
 .mainContent {
     width: 750px ;
     margin-left: auto ;
@@ -70,6 +71,15 @@ blockquote {
 .mainContent h3 {
     color: #006600
 }
+.mainContent h4 {
+    color: darkslateblue;
+}
+.mainContent hr {
+    border: none;
+    height: 1px;
+    background-color: lavender;
+}
+
 header.pageHeader {
     border-top: 5px solid #7a1f00;
     border-bottom: 2px solid #e8e8e8;
