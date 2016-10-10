@@ -30,7 +30,7 @@
 
 ## Bloomberg LP.  
 #### London: July — September 2015
-* Worked in Core Monitors, a team creating realtime customisable spreadsheets for viewing market data. Developed in a proprietary Node.js like technology with Angular like front-end.
+*Worked in Core Monitors, a team creating realtime customisable spreadsheets for viewing market data. Developed in a proprietary Node.js like technology with Angular like front-end.*
 * Created the foundation for the mobile version of the new monitors app, moving a large client side application to a backend service, refactoring the codebase to allow for a UI-less version of the app to run on a server.
 * Worked in a team following agile principles, and took part in formal code reviews for pull requests.
 
@@ -38,7 +38,7 @@
 
 ## Delcam Plc.  
 #### Birmingham: July — September 2014
-* Worked in ArtCAM, a small team developing artistic CADCAM software. Developed backend in c++ and used Javascript for user interface.
+*Worked in ArtCAM, a small team developing artistic CADCAM software. Developed backend in c++ and used Javascript for UI.*
 * Created a tool which takes incremental slices of a 3D model, outputting the slices as models in the program, PNG files or SVG graphics.
 * Wrote an API which, given a list of vector objects(beziers/shapes/straight lines), created a to-scale SVG file. This was then used for exporting vector graphics as part of a client’s request.
 

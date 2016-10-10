@@ -1,6 +1,6 @@
 ---
 {
-    "title": "Making This Blogging Website: My First Attempt at Web Development",
+    "title": "Making This Blogging Website: My First Go at Web Design",
     "date": "2015-09-28"
 }
 ---

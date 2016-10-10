@@ -24,7 +24,6 @@ function initialise() {
         return Promise.props({
             head: openFileToString('page-templates/head.html'),
             header: openFileToString('page-templates/header.html')
-            // footer: openFileToString('page-templates/footer.html', 'utf-8')
         }).then(function(handlebarsContext) {
             template = function(pageSpecificContent) {
                 handlebarsContext.content = pageSpecificContent.mainContent;
@@ -57,8 +56,6 @@ function buildPost(postName) {
     .then(function(data) {
         var postAndMetadata = extractMetaData(data.toString());
         var post = postAndMetadata.post;
-        // title = postAndMetadata.title || "";
-        // var postHeader = marked('# ' + title + '\n');
         var postHeader = postAndMetadata.title ? marked('# ' + postAndMetadata.title + '\n') : '';
         if (postName !== 'aboutme') {
             if (postAndMetadata.date) {
@@ -67,9 +64,11 @@ function buildPost(postName) {
             }
 
         }
-        postHeader += '<link rel="stylesheet" href="/resource/styles/code.css">' +
-            '<script src="/resource/script/highlight.pack.js"></script>' +
-            '<script>hljs.initHighlightingOnLoad();</script>';
+        postHeader += `
+            <link rel="stylesheet" href="/resource/styles/code.css">
+            <script src="/resource/script/highlight.pack.js"></script>
+            <script>hljs.initHighlightingOnLoad();</script>
+        `
 
         return template({
             mainContent: postHeader + marked(post),
