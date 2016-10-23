@@ -1,9 +1,11 @@
 ---
 {
-    "title": "A More Detailed Resume",
+    "title": "CV",
     "footer": "'I specialize in CNNs - convoluted neural networks.'"
 }
 ---
+
+[linkedin](https://uk.linkedin.com/in/samcoope)  ·  sam.j.coope@gmail.com
 
 ## Imperial College London - Computing MEng  
 #### London: 2013 — Present

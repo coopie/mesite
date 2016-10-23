@@ -64,11 +64,16 @@ function buildPost(postName) {
             }
 
         }
-        postHeader += `
-            <link rel="stylesheet" href="/resource/styles/code.css">
-            <script src="/resource/script/highlight.pack.js"></script>
-            <script>hljs.initHighlightingOnLoad();</script>
-        `
+        postHeader +=
+            '<link rel="stylesheet" href="/resource/styles/code.css">' +
+            '<script src="/resource/script/highlight.pack.js"></script>' +
+            '<script>hljs.initHighlightingOnLoad();</script>'
+
+        // postHeader += `
+        //     <link rel="stylesheet" href="/resource/styles/code.css">
+        //     <script src="/resource/script/highlight.pack.js"></script>
+        //     <script>hljs.initHighlightingOnLoad();</script>
+        // `
 
         return template({
             mainContent: postHeader + marked(post),
@@ -79,14 +84,23 @@ function buildPost(postName) {
 }
 
 function buildIndex() {
-    var aboutAndGithub = `
-    <span style="text-align:center">
-        <h3>
-            <a href="https://github.com/coopie" class="samLink">github</a>
-            <a href="/about" class="samLink">about me</a>
-        </h3>
-    </span>
-    `
+    var aboutAndGithub =
+    '<span style="text-align:center">' +
+        '<h3>' +
+            '<a href="https://github.com/coopie" class="samLink">github</a>' +
+            ' · ' +
+            '<a href="/about" class="samLink">about me</a>' +
+        '</h3>' +
+    '</span>'
+
+    // var aboutAndGithub = `
+    // <span style="text-align:center">
+    //     <h3>
+    //         <a href="https://github.com/coopie" class="samLink">github</a>
+    //         <a href="/about" class="samLink">about me</a>
+    //     </h3>
+    // </span>
+    // `
     return getSortedListOfPosts()
     .then(function(posts) {
         var postList = '';
@@ -114,7 +128,7 @@ function getSortedListOfPosts() {
     .then(function(files) {
         var all = [];
         files.forEach(function(file) {
-            if (file === 'aboutme.md' || file == 'resume.md') {
+            if (file === 'aboutme.md' || file == 'CV.md') {
                 return;
             }
             all.push(fs.readFileAsync('posts/' + file)
