@@ -23,9 +23,9 @@ Currently, all of the heavyweight research into this area of machine learning co
 
 ### 2. Potential Benefit ###
 
-There are a lots more theoretical (medical) uses for analysing speech and video of people's face. Some people theorise that [depression](http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=6365169&tag=1) can be detected in people (or at least help doctors with a [diagnosis](http://www3.cs.stonybrook.edu/~minhhoai/papers/acii-paper_final.pdf)), heart arrhythmia and potentially a lot more.
+There are a lot more theoretical uses for analysing speech and video of a persons's face. Some people theorise that [depression](http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=6365169&tag=1) can be detected in people (or at least help doctors with a [diagnosis](http://www3.cs.stonybrook.edu/~minhhoai/papers/acii-paper_final.pdf)), heart arrhythmia and potentially a lot more.
 
-Imagine combining these abilities into one product. In the future a doctor could use something like this to help detect subtle symptoms in the way a person presents themselves. A whole new quantification of emotional wellbeing (which could be accurately recorded) would completely change how so many areas of medicine work.
+Imagine combining these abilities into one product. In the future a doctor could use something like this to help detect subtle symptoms in the way a person presents themselves. A whole new quantification of emotional wellbeing would completely change how so many areas of medicine work.
 
 Being able to detect heart rate (and other stuff) from speech or video of a person's face has a whole bunch of benefits:
 
@@ -35,7 +35,7 @@ Being able to detect heart rate (and other stuff) from speech or video of a pers
 
 ## What We Did ##
 
-The final product was a website where you could upload a video (with a person talking in it) and have it streamed back to you in real time with the heart beat of the person in the video. We used both the audio and video methods of estimating heart rate to get as good an estimate as possible. Unfortunately we have not hosted it at the moment, as it would require some powerful commodity hardware to run the server.
+The final product was a website where you could upload a video with a person talking in it and have it streamed back to you in real time with the heart beat of the person in the video. We used both the audio and video methods of estimating heart rate to get as good an estimate as possible. Unfortunately we have not hosted it at the moment, as it would require some powerful hardware to run the server.
 
 Here is a screenshot of our video streaming service. In retrospect I think superimposing a big red square over the person's face looks a bit tacky.
 
