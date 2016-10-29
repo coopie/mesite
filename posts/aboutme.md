@@ -27,7 +27,11 @@ When I am not doing any of these things, I also go rock climbing and try to do s
 
 ## Contact
 
-If you would like to send a friendly email, or have a better name for my blog, send one to `sam.j.coope@gmail.com`
+If you would like to send a friendly email, or have a better name for my blog, send one to:
+
+```
+sam DOT j DOT coope  AT  gmail DOT com
+```
 
 If you are interested in me working for you, check out my [linkedin page](https://uk.linkedin.com/in/samcoope)
 
