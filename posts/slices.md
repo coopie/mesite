@@ -34,7 +34,7 @@ The black and white PNGs are a single slice of the image, whereas the colorful S
 <a href="http://imgur.com/oV69Bcp"><img src="http://i.imgur.com/oV69Bcp.png" title="source: imgur.com" /></a>
 
 ---
-## Flower
+## Flower Closeup
 
 <a href="http://imgur.com/LGczH2R"><img src="http://i.imgur.com/LGczH2R.png" title="source: imgur.com" /></a>
 
