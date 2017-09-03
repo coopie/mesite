@@ -7,8 +7,17 @@
 
 [linkedin](https://uk.linkedin.com/in/samcoope)  ·  sam DOT j DOT coope  AT  gmail DOT com
 
+## DigitalGenius - Deep Learning Researcher
+#### London: 2017 - Present
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2483.4505921755613!2d-0.02168928460090341!3d51.50494887963478!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487602cdae6dbaed%3A0x6ec7d6d13c8a5dbc!2sOne+Canada+Square!5e0!3m2!1sen!2suk!4v1504445515798" width="750" height="220" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+* Research relevant areas of NLP to incorporate into product.
+* Work on production deep learning service to incorporate new models.
+* Write up research for publication in AI conferences. (Publications coming very soon.)
+
+
 ## Imperial College London - Computing MEng  
-#### London: 2013 — Present
+#### London: 2013 — 2017
 
 <!-- center and smaller -->
 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d55432.212798926565!2d-0.17077476476634082!3d51.495268022028164!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48760567da220a01%3A0x31911b371c692e86!2sImperial+College+London!5e0!3m2!1sen!2sde!4v1477742970549" width="750" height="220" frameborder="0" style="border:0" allowfullscreen></iframe>
@@ -47,7 +56,7 @@
 
 ---
 
-## Delcam Plc.  
+## Autodesk.  
 #### Birmingham: July — September 2014
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63023.866986489025!2d-1.9115833170709673!3d52.47291920074207!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4870bbbb242ecf29%3A0x3f8afa292a74cbdb!2sAutodesk+Ltd!5e0!3m2!1sen!2sus!4v1477744451545" width="750" height="220" frameborder="0" style="border:0" allowfullscreen></iframe>
 *Worked in ArtCAM, a small team developing artistic CADCAM software. Developed backend in c++ and used Javascript for UI.*

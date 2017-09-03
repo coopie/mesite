@@ -8,19 +8,22 @@ Hello.
 
 The name's Sam, and I'm from the shire , Worcestershire to be precise, about ten minutes away from Tolkien's house.
 
-As many do, I moved to somewhere else to study. For me that place was West London, to study computing at Imperial College London. I now live in Parsons Green with 5 of my good friends.
+As many do, I moved to somewhere else to study. For me that place was West London, to study computing at Imperial College London. I now live in in London working as a deep learning researcher for [DigitalGenius](https://www.digitalgenius.com/).
 
 ## What I Like
 
 ### Media
 Be they films, music, cartoons or video games, I love consuming and discussing media.
 
+### Deep Learning
+For the last few years, I have specialized in deep learning with a sub-specialization in language, be it programming languages or natural language. I am very interested in novel approaches to language generation, such as translation, summarization and also generative models.
+
+
 ### Programming
-I don't think any other commercial or academic field has such a fast moving and beaureaucratic-less community as programmers do. Learning about new technologies, and the mathematics behind them, is one of my favourite pastimes.
+I don't think any other commercial or academic field has such a fast moving and beaureaucratic-less community as programmers do. Learning about new technologies, and the mathematics behind them, is one of my favorite pastimes.
 
-I have a hobby of doing random things with functional programming languages, such as haskell and scala, and am of the belief that the future of programming lies in immutable data and functional programming for vast distributed computation.
+I have a hobby of doing random things with functional programming languages, such as haskell and scala, and am of the belief that the future of programming lies in immutable data and functional programming.
 
-I am also a lover of node.js (I already sense a disapproving look from some of you), having used it in the summer to build applications and back-end services. Asynchronous programming is pretty cool in my opinion.
 
 ### Escaping the City
 When I am not doing any of these things, I also go rock climbing and try to do some hiking whenever I can.
