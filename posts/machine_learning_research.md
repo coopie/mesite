@@ -5,6 +5,8 @@
 }
 ---
 
+[discussion](https://www.reddit.com/r/MachineLearning/comments/6xtu0i/d_some_rules_i_try_to_keep_to_when_researching/)
+
 In much of the lifespan of a research project, time is spent exploring rather than refining. One of the big issues with exploring is that old experiments can be lost due to codebase changes. Along with this, exploration can grind to a halt when too many one-off scripts are written, and poor programming paradigms are used.
 
 These are some rules I have found to be beneficial to the exploratory research I have done. I don't always stick to them strictly, but I use them to push me off the path of least resistance.
