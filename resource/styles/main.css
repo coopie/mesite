@@ -11,6 +11,16 @@ h1, h2, h3, h4 {
     font-family: "Quicksand", sans-serif;
     font-weight: 400;
 }
+h1 {
+    font-size: 36;
+}
+h2 {
+    font-size: 28;
+}
+h3 {
+    font-size: 24;
+}
+
 p , li{
     line-height: 150%;
 }
