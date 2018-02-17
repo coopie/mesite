@@ -3,9 +3,7 @@ var express = require('express');
 
 var server = express();
 
-var PORT = process.env.OPENSHIFT_NODEJS_PORT || 8080;
-var IPADDRESS = process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0';
-console.log('ip is: ', IPADDRESS);
+var PORT = process.env.PORT || 8080;
 
 server.get('/', function(request, response) {
     pageBuilder.buildIndex()
@@ -52,7 +50,7 @@ function deliverPage(response, page) {
 }
 
 pageBuilder.initialise().then(function() {
-    server.listen(PORT, IPADDRESS, function() {
+    server.listen(PORT, function() {
         console.log('Server listening on port:%s', PORT);
     });
 });
