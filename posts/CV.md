@@ -15,6 +15,7 @@
 * Work on production deep learning service to incorporate new models.
 * Write up research for publication in AI conferences. (Publications coming very soon.)
 
+---
 
 ## Imperial College London - Computing MEng  
 #### London: 2013 — 2017
