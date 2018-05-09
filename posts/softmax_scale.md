@@ -12,13 +12,13 @@
 
 Here is a good motivating (and quite contrived) example:
 
-Suppose you have a seq2seq model which uses an attention mechanism for the decoder. The mechanism looks at the previous states of the decoder (similar to [1]), and computes a weight for each previous hidden states. Let's say the attention module produces values between [-1, 1] representing the importance of that hidden state to the current one.
+Suppose you have a seq2seq model which uses an attention mechanism for the decoder. The mechanism looks at the previous states of the decoder (similar to [1]), and computes a weight for each previous hidden state. Let's say the attention module produces weights between [-1, 1] representing the importance of that hidden state to the current one.
 
-This attention mechanism is then used on a varying length of weights: Early on in the decoding step, the sequence of previous hidden states is quite small, whereas the later steps will have significantly longer sequences of weights.
+This attention mechanism is then used on sequences of varying length: Early on in the decoding step, the sequence of previous hidden states is quite small, whereas the later steps will have significantly longer sequences of weights.
 
 
-Typically these weights are then softmaxed to produce the final weights used to form the attention vector.
-An important thing to note here is that *attention mechanisms are typically meant to pick out only a few parts of a sequence*. We hope for trained models to produce attention coefficients where many values are close to 0, and only a few values which are not close to zero.
+Typically these weights are then softmaxed to produce the normalized weights used to form the 'attended' embedding.
+An important thing to note here is that *attention mechanisms are typically meant to pick out only a few parts of a sequence*. We hope for trained models to produce normalized attention weights where many values are close to 0, and only a few values which are not close to zero.
 
 
 Now lets consider this mechanism when it only has three previous hidden states. The trained model has learned to single out only the hidden states that pertain to the current hidden state.
