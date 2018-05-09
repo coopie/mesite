@@ -90,6 +90,10 @@ function buildIndex() {
             '<a href="https://github.com/coopie" class="samLink">github</a>' +
             ' · ' +
             '<a href="/about" class="samLink">about me</a>' +
+            ' · ' +
+            '<a href="https://www.instagram.com/cahooop/" class="samLink">instagram</a>' +
+
+
         '</h3>' +
     '</span>'
 

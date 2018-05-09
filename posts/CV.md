@@ -11,9 +11,13 @@
 #### London: 2017 - Present
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2483.4505921755613!2d-0.02168928460090341!3d51.50494887963478!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487602cdae6dbaed%3A0x6ec7d6d13c8a5dbc!2sOne+Canada+Square!5e0!3m2!1sen!2suk!4v1504445515798" width="750" height="220" frameborder="0" style="border:0" allowfullscreen></iframe>
 
-* Research relevant areas of NLP to incorporate into product.
-* Work on production deep learning service to incorporate new models.
-* Write up research for publication in AI conferences. (Publications coming very soon.)
+* Researching state of the art NLP - extractive question answering, word embeddings etc.
+* Moving successful models from research to production systems.
+* Developing fast thresholding algorithms to ensure highly accurate automations.
+* Working with customers to improve model performance on their data.
+* Teaching sales representatives on the AI platform, workshopping effective pitches.
+* Interviewing and supervising new machine learning employees/interns.
+* Refactoring the production codebase to a more functional/compositional structure.
 
 ---
 

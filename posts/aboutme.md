@@ -38,6 +38,6 @@ sam DOT j DOT coope  AT  gmail DOT com
 
 If you are interested in me working for you, check out my [linkedin page](https://uk.linkedin.com/in/samcoope)
 
-If you are really interested, you can have a look at [my resume](https://drive.google.com/file/d/0B0Ocvcx-vdBrdG5qZ202NEJSTUk/view?usp=sharing)
+If you are really interested, you can have a look at [my resume](https://drive.google.com/file/d/1BHOvbJMuNftGFxx4Em0grZrq-jx2VGF4/view?usp=sharing)
 
 If you are really really interested, have a look at my [full CV](/CV)
