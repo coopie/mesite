@@ -64,6 +64,7 @@
 ## Autodesk.  
 #### Birmingham: July — September 2014
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63023.866986489025!2d-1.9115833170709673!3d52.47291920074207!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4870bbbb242ecf29%3A0x3f8afa292a74cbdb!2sAutodesk+Ltd!5e0!3m2!1sen!2sus!4v1477744451545" width="750" height="220" frameborder="0" style="border:0" allowfullscreen></iframe>
+
 *Worked in ArtCAM, a small team developing artistic CADCAM software. Developed backend in c++ and used Javascript for UI.*
 * Created a tool which takes incremental slices of a 3D model, outputting the slices as models in the program, PNG files or SVG graphics.
 * Wrote an API which, given a list of vector objects(beziers/shapes/straight lines), created a to-scale SVG file. This was then used for exporting vector graphics as part of a client’s request.

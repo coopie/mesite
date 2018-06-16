@@ -67,10 +67,10 @@ function buildPost(postName) {
         postHeader +=
             '<link rel="stylesheet" href="/resource/styles/code.css">' +
             '<script src="/resource/script/highlight.pack.js"></script>' +
-            '<script>hljs.initHighlightingOnLoad();</script>'
+            '<script>hljs.initHighlightingOnLoad();</script>';
 
         if (postAndMetadata.style !== undefined) {
-            postHeader += CustomPostCSS(postAndMetadata.style)
+            postHeader += CustomPostCSS(postAndMetadata.style);
         }
 
         return template({
@@ -91,22 +91,32 @@ function buildIndex() {
             ' · ' +
             '<a href="https://www.instagram.com/cahooop/" class="samLink">instagram</a>' +
         '</h3>' +
-    '</span>'
+    '</span>';
 
     return getSortedListOfPosts()
     .then(function(posts) {
         var postList = '';
         posts.forEach(function(post) {
+            if (post.style !== undefined) {
+                color1 = post.style.color1;
+                color2 = post.style.color2;
+            } else {
+                color1 = 'var(--color0)';
+                color2 = 'var(--color10)';
+            }
+
             postList += postEntryTemplate({
                 title: post.title,
                 date: prettyDate.format(new Date(post.date)),
                 link: linkTo(post.name),
+                color1: color1,
+                color2: color2
             });
         });
         postList += '';
         return template({
             mainContent: aboutAndGithub + postList,
-            footer: 'We learn through repetition. We learn through repetition. We learn through repetition'
+            footer: 'We learn through repetition. We learn through repetition. We learn through repetition',
         });
     });
 }
@@ -156,51 +166,24 @@ function linkTo(post, text) {
     return 'posts/' + post.slice(0, (-1) * '.md'.length);
 }
 
-
 function CustomPostCSS(postStyleBlob) {
     // create the things from the other things
-    let {color1, color2} = postStyleBlob;
-
-    let colormap = interpolate([color1, color2]);
+    const {color1, color2} = postStyleBlob;
+    const colormap = interpolate([color1, color2]);
     return `
     <style>
-    .mainContent h1 {
-        color: ${colormap(0)};
-    }
-    .mainContent h2 {
-        color: ${colormap(0.2)};
-    }
-    .mainContent h3 {
-        color: ${colormap(0.5)};
-    }
-    .mainContent h4 {
-        color: ${colormap(0.6)};
-    }
-    .mainContent hr {
-        background-color: ${colormap(0)};
-    }
-    header.pageHeader {
-        border-image: linear-gradient(315deg, ${colormap(1)} 0%, ${colormap(0)} 74%) 10 10;
-    }
-    .pagefooter {
-        border-image: linear-gradient(315deg, ${colormap(1)} 0%, ${colormap(0)} 74%) 10 10;
-    }
-    a:link {
-        color: ${colormap(0)};
-        text-decoration: none;
-    }
-    a:visited {
-        color: ${colormap(0.3)};;
-        text-decoration: none;
-    }
-    a:hover {
-        color: ${colormap(0.6)};
-        text-decoration: underline;
-    }
-    a:active {
-        color: ${colormap(1)};
-        background-color: ${colormap(0)};
-        text-decoration: underline;
+    :root {
+      --color0: ${colormap(0 / 10)};
+      --color1: ${colormap(1 / 10)};
+      --color2: ${colormap(2 / 10)};
+      --color3: ${colormap(3 / 10)};
+      --color4: ${colormap(4 / 10)};
+      --color5: ${colormap(5 / 10)};
+      --color6: ${colormap(6 / 10)};
+      --color7: ${colormap(7 / 10)};
+      --color8: ${colormap(8 / 10)};
+      --color9: ${colormap(9 / 10)};
+      --color10: ${colormap(10 / 10)};
     }
     </style>
     `;
