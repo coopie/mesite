@@ -1,10 +1,13 @@
 ---
 {
     "title": "A Simple Program Generator for Benchmarking Generative Models",
-    "date": "2017-11-28"
+    "date": "2017-11-28",
+    "style": {
+        "color1": "#2a2a72",
+        "color2": "#009ffd"
+    }
 }
 ---
-
 
 For my [master's thesis](/posts/deep_code_generation) created a simple Haskell generator called [`huzzer`](https://github.com/coopie/huzzer) to generate data for my experiments. You can try it out to see what sort of programs it makes:
 

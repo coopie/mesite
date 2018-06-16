@@ -17,13 +17,6 @@ server.get('/posts/:post', function(request, response) {
         deliverPage(response, page);
     });
 });
-//TODO: REMOVE THIS NEXT TIME I WRITE SOMEWHERE
-server.get('/resume', function(request, response) {
-    pageBuilder.buildPost('CV')
-    .then(function(page) {
-        deliverPage(response, page);
-    });
-});
 server.get('/CV', function(request, response) {
     pageBuilder.buildPost('CV')
     .then(function(page) {

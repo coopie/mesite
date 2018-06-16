@@ -1,9 +1,20 @@
+:root {
+  --color10: rgb(252,224,67);
+  --color9: rgb(252,214,77);
+  --color8: rgb(252,204,86);
+  --color7: rgb(252,194,96);
+  --color6: rgb(252,184,105);
+  --color5: rgb(252,174,115);
+  --color4: rgb(251,163,124);
+  --color3: rgb(251,153,134);
+  --color2: rgb(251,143,143);
+  --color1: rgb(251,133,153);
+  --color0: rgb(251,123,162);
+}
+
 body {
-    /*font-family: "Merriweather", sans-serif;*/
     font-family: "Helvetic Neue", sans-serif;
     font-size: 16px;
-    /*color: #66595c;*/
-    /*color: #443b3e;*/
     color: #52474b;
     margin: 0px 0px 0px 0px;
 }
@@ -28,12 +39,9 @@ li {
     padding-bottom: 10px;
 }
 strong {
-    color: #4d004c;
+    color: var(--color2)
 }
-img {
-    width: 100%;
-    border-radius: 10px;
-}
+
 table {
     width: 100%;
     border-collapse: collapse;
@@ -48,12 +56,12 @@ th {
     text-align: left;
     padding-top: 5px;
     padding-bottom: 4px;
-    background-color: #333375;
+    background-color: #ededed;
     color: #ffffff;
 }
 tr.alt td {
     color: #000000;
-    background-color: #c2c2d6;
+    background-color: #ffffff;
 }
 blockquote {
   background: #f9f9f9;
@@ -72,30 +80,43 @@ blockquote {
     margin-left: auto ;
     margin-right: auto ;
 }
+
 .mainContent h1 {
-    color: #00248f
+    color: var(--color0);
 }
 .mainContent h2 {
-    color: #800000;
+    color: var(--color2);
 }
 .mainContent h3 {
-    color: #006600
+    color: var(--color4)
 }
 .mainContent h4 {
-    color: darkslateblue;
+    color: var(--color6);
 }
 .mainContent hr {
     border: none;
     height: 1px;
-    background-color: lavender;
+    background-color: var(--color0);
 }
-
 header.pageHeader {
-    border-top: 5px solid #7a1f00;
-    border-bottom: 2px solid #e8e8e8;
+    border-width: 10px 0 2px 0;
+    border-style: solid;
+    border-image: linear-gradient(315deg, var(--color10) 0%, var(--color0) 74%) 10 10;
     min-height: 56px;
     position: relative;
 }
+.pagefooter {
+    border-width: 2px 0 0 0;
+    border-style: solid;
+    border-image: linear-gradient(315deg, var(--color10) 0%, var(--color0) 74%) 10 10;
+}
+
+.mainContent img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+
 img#myHeaderPicture {
     height: 60px;
     width: 60px;
@@ -110,9 +131,6 @@ span#titleText {
 .headerContent {
     text-align: center;
 }
-.pagefooter {
-    border-top: 2px solid #7a1f00;
-}
 .footerContent {
     width: 700px ;
     margin-left: auto ;
@@ -122,72 +140,40 @@ span#titleText {
     text-align: center;
 }
 a:link {
-    color: #3333ad;
+    color: var(--color0);
     text-decoration: none;
 }
 a:visited {
-    color: #cc00cc;
+    color: var(--color3);
     text-decoration: none;
 }
 a:hover {
-    color: #0000FF;
-    text-decoration: underline;
+    color: var(--color6);
 }
 a:active {
-    color: #FF00FF;
-    text-decoration: underline;
+    color: var(--color10)};
+    background-color: var(--color0);
 }
 
 a.samLink:link {
-    color: #3333ad;
+    color: var(--color0);
     text-decoration: none;
 }
 a.samLink:visited {
-    color: #cc00cc;
+    color: var(--color2);
     text-decoration: none;
 }
 a.samLink:hover {
-    color: #0000FF;
+    color: var(--color4);
 }
 a.samLink:active {
-    color: #FF00FF;
+    color: var(--color6);
 }
 
-a#titleLink:link {
-    color: #008800;
-    text-decoration: none;
+.postTitle span {
+
 }
-a#titleLink:visited {
-    color: #008800;
-    text-decoration: none;
-}
-a#titleLink:hover {
-    color: #008800;
-    text-decoration: none;
-}
-a#titleLink:active {
-    color: #ff00ff;
-    text-decoration: none;
-}
-.postTitle a:link {
-    color: #003399;
-    text-decoration: none;
-}
-.postTitle a:visited {
-    color: #660066;
-    text-decoration: none;
-}
-.postTitle a:hover {
-    color: #660066;
-    text-decoration: underline;
-}
-.postTitle a:active {
-    color: #FF3399;
-    text-decoration: underline;
-}
-.postTitle h2 {
-    color: inherit;
-}
+
 .noBottom {
     margin-bottom: 0
 }
@@ -202,7 +188,7 @@ a#titleLink:active {
     margin-top: -60px;
     height: 60px;
     clear:both;
-    font-family: "Merriweather";
+    font-family: "Helvetica Neue";
 }
 
 #myBtn {

@@ -2,7 +2,11 @@
 {
     "title": "Hearing Heartbeat in Audio and Video: A Deep Learning Project",
     "date": "2016-02-02",
-    "footer": "Geoff Hinton once built a neural network that beat Chuck Norris on MNIST."
+    "footer": "Geoff Hinton once built a neural network that beat Chuck Norris on MNIST.",
+    "style": {
+        "color1": "#c81f70",
+        "color2": "#d19592"
+    }
 }
 ---
 Last term, I ended up taking three machine learning courses, along with a couple of others. Out of all of the stuff I did last term, the biggest and best thing I did was work with a few friends on a group project. This project was:

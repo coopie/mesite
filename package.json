@@ -15,15 +15,16 @@
     "url": "git+https://github.com/coopie/mesite.git"
   },
   "engines": {
-    "node": ">= 0.6.0",
+    "node": ">= 8.0.0",
     "npm": ">= 1.0.0"
   },
   "dependencies": {
     "bluebird": "^2.10.1",
-    "express": "^4.13.3",
-    "handlebars": "^4.0.3",
+    "color-interpolate": "^1.0.2",
+    "express": "^4.16.3",
+    "handlebars": "^4.0.11",
     "intl": "^1.0.0",
-    "marked": "^0.3.5",
+    "marked": "^0.4.0",
     "pretty-date": "^0.2.0"
   },
   "devDependencies": {},

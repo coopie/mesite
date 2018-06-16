@@ -1,8 +1,14 @@
 ---
 {
     "title": "Slices Of 3D Models: Almost Looks like Art",
-    "date": "2016-10-29"
+    "date": "2016-10-29",
+    "style": {
+        "color1": "#fe5858",
+        "color2": "#ee9617"
+    }
 }
+
+
 ---
 
 During my time interning at Autodesk (formerly Delcam) in 2014, I spent some time making a feature that sliced 3D models. These slices could be turned into pretty much anything: SVGs, PNGs, special vector formats for CAD, even more 3D models.
