@@ -42,12 +42,12 @@ th {
     text-align: left;
     padding-top: 5px;
     padding-bottom: 4px;
-    background-color: #333375;
+    background-color: #ededed;
     color: #ffffff;
 }
 tr.alt td {
     color: #000000;
-    background-color: #c2c2d6;
+    background-color: #ffffff;
 }
 blockquote {
   background: #f9f9f9;
@@ -86,11 +86,17 @@ blockquote {
     background-color: lavender;
 }
 header.pageHeader {
-    border-width: 10px 0 3px 0;
+    border-width: 10px 0 2px 0;
     border-style: solid;
     border-image: linear-gradient(315deg, #fce043 0%, #fb7ba2 74%) 10 10;
     min-height: 56px;
     position: relative;
+}
+.pagefooter {
+    /* border-top: 2px solid #7a1f00; */
+    border-width: 2px 0 0 0;
+    border-style: solid;
+    border-image: linear-gradient(315deg, #fce043 0%, #fb7ba2 74%) 10 10;
 }
 
 .mainContent img {
@@ -112,9 +118,6 @@ span#titleText {
 }
 .headerContent {
     text-align: center;
-}
-.pagefooter {
-    border-top: 2px solid #7a1f00;
 }
 .footerContent {
     width: 700px ;

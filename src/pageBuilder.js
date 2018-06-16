@@ -1,10 +1,10 @@
-var Promise = require('bluebird');
-var marked = require('marked');
-var fs = require('fs');
+const Promise = require('bluebird');
+const marked = require('marked');
+const fs = require('fs');
 Promise.promisifyAll(fs);
-var Handlebars = require('handlebars');
-var prettyDate = require('pretty-date');
-var Intl = require('intl');
+const Handlebars = require('handlebars');
+const prettyDate = require('pretty-date');
+const interpolate = require('color-interpolate');
 
 var template;
 var postEntryTemplate;
@@ -68,6 +68,10 @@ function buildPost(postName) {
             '<link rel="stylesheet" href="/resource/styles/code.css">' +
             '<script src="/resource/script/highlight.pack.js"></script>' +
             '<script>hljs.initHighlightingOnLoad();</script>'
+
+        if (postAndMetadata.style !== undefined) {
+            postHeader += CustomPostCSS(postAndMetadata.style)
+        }
 
         return template({
             mainContent: postHeader + marked(post),
@@ -150,6 +154,56 @@ function extractMetaData(file) {
 
 function linkTo(post, text) {
     return 'posts/' + post.slice(0, (-1) * '.md'.length);
+}
+
+
+function CustomPostCSS(postStyleBlob) {
+    // create the things from the other things
+    let {color1, color2} = postStyleBlob;
+
+    let colormap = interpolate([color1, color2]);
+    return `
+    <style>
+    .mainContent h1 {
+        color: ${colormap(0)};
+    }
+    .mainContent h2 {
+        color: ${colormap(0.2)};
+    }
+    .mainContent h3 {
+        color: ${colormap(0.5)};
+    }
+    .mainContent h4 {
+        color: ${colormap(0.6)};
+    }
+    .mainContent hr {
+        background-color: ${colormap(0)};
+    }
+    header.pageHeader {
+        border-image: linear-gradient(315deg, ${colormap(1)} 0%, ${colormap(0)} 74%) 10 10;
+    }
+    .pagefooter {
+        border-image: linear-gradient(315deg, ${colormap(1)} 0%, ${colormap(0)} 74%) 10 10;
+    }
+    a:link {
+        color: ${colormap(0)};
+        text-decoration: none;
+    }
+    a:visited {
+        color: ${colormap(0.3)};;
+        text-decoration: none;
+    }
+    a:hover {
+        color: ${colormap(0.6)};
+        text-decoration: underline;
+    }
+    a:active {
+        color: ${colormap(1)};
+        background-color: ${colormap(0)};
+        text-decoration: underline;
+    }
+    </style>
+    `;
 }
 
 module.exports = {
