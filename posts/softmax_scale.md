@@ -1,12 +1,18 @@
 ---
 {
     "title": "Some Thoughts About a Length-Scaled Softmax",
-    "date": "2017-05-13"
+    "date": "2017-05-13",
+    "style": {
+        "color1": "#380036",
+        "color2": "#0cbaba"
+    }
+
 }
 ---
 
 **tl:dr:** *Some back-of-the-envelope ideas about a dynamically scaled softmax.*
 
+[discussion](https://www.reddit.com/r/MachineLearning/comments/6atcuk/d_a_potential_solution_to_varying_length_softmax/)
 
 ***Has there been any work into creating a length-scaled softmax?*** I couldn't find any with a quick google.
 

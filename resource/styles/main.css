@@ -156,18 +156,18 @@ a:active {
 }
 
 a.samLink:link {
-    color: #3333ad;
+    color: var(--color0);
     text-decoration: none;
 }
 a.samLink:visited {
-    color: #cc00cc;
+    color: var(--color2);
     text-decoration: none;
 }
 a.samLink:hover {
-    color: #0000FF;
+    color: var(--color4);
 }
 a.samLink:active {
-    color: #FF00FF;
+    color: var(--color6);
 }
 
 .postTitle span {

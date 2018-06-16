@@ -1,7 +1,11 @@
 ---
 {
     "title": "Generating Simple Haskell Programs With Deep Learning",
-    "date": "2017-09-10"
+    "date": "2017-09-10",
+    "style": {
+        "color1": "#2884b8",
+        "color2": "#d1bad2"
+    }
 }
 ---
 

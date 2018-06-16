@@ -4,8 +4,8 @@
     "date": "2016-02-02",
     "footer": "Geoff Hinton once built a neural network that beat Chuck Norris on MNIST.",
     "style": {
-        "color1": "purple",
-        "color2": "yellow"
+        "color1": "#c81f70",
+        "color2": "#d19592"
     }
 }
 ---
