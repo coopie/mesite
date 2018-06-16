@@ -69,12 +69,6 @@ function buildPost(postName) {
             '<script src="/resource/script/highlight.pack.js"></script>' +
             '<script>hljs.initHighlightingOnLoad();</script>'
 
-        // postHeader += `
-        //     <link rel="stylesheet" href="/resource/styles/code.css">
-        //     <script src="/resource/script/highlight.pack.js"></script>
-        //     <script>hljs.initHighlightingOnLoad();</script>
-        // `
-
         return template({
             mainContent: postHeader + marked(post),
             footer: postAndMetadata.footer || 'hoc quoque finiet  גם זה יעבור‎  لا شيء يدوم this too shall pass'
@@ -92,19 +86,9 @@ function buildIndex() {
             '<a href="/about" class="samLink">about me</a>' +
             ' · ' +
             '<a href="https://www.instagram.com/cahooop/" class="samLink">instagram</a>' +
-
-
         '</h3>' +
     '</span>'
 
-    // var aboutAndGithub = `
-    // <span style="text-align:center">
-    //     <h3>
-    //         <a href="https://github.com/coopie" class="samLink">github</a>
-    //         <a href="/about" class="samLink">about me</a>
-    //     </h3>
-    // </span>
-    // `
     return getSortedListOfPosts()
     .then(function(posts) {
         var postList = '';
@@ -150,15 +134,15 @@ function getSortedListOfPosts() {
     });
 }
 
-var metaDataToken = '---';
+var METADATA_TOKEN = '---';
 function extractMetaData(file) {
     var metaData;
-    file = file.slice(metaDataToken.length);
+    file = file.slice(METADATA_TOKEN.length);
 
-    metaData = file.slice(0, file.indexOf(metaDataToken));
+    metaData = file.slice(0, file.indexOf(METADATA_TOKEN));
     metaData = JSON.parse(metaData);
 
-    file = file.slice(file.indexOf(metaDataToken) + metaDataToken.length);
+    file = file.slice(file.indexOf(METADATA_TOKEN) + METADATA_TOKEN.length);
 
     metaData.post = file;
     return metaData;
