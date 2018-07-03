@@ -3,8 +3,8 @@
     "title": "Generating Simple Haskell Programs With Deep Learning",
     "date": "2017-09-10",
     "style": {
-        "color1": "#2884b8",
-        "color2": "#d1bad2"
+        "color1": "rgb(24, 99, 142)",
+        "color2": "rgb(210, 161, 212)"
     }
 }
 ---

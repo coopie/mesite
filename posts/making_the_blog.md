@@ -1,7 +1,11 @@
 ---
 {
     "title": "Making This Blogging Website: My First Go at Web Design",
-    "date": "2015-09-28"
+    "date": "2015-09-28",
+    "style": {
+        "color1": "rgb(103, 34, 156)",
+        "color2": "rgb(251, 151, 65)"
+    }
 }
 ---
 This being my first official post, I see it only fitting to talk about why and how I made this website. Check out the [github repo](https://github.com/coopie/mesite) if you want to see the source.
@@ -21,7 +25,7 @@ Before making this website, I had a look around at some currently existing blogg
 
 After looking around, I found the [jekyll blogging framework](http://jekyllrb.com/), exactly what I wanted. It looked really nice, had markdown posts, and even looked simple enough that I could make a website like that myself...
 
->*"I have a week or so before uni starts and I have just finished the Witcher 3, so I might as well give it a go"*
+>*"I have a week or so before uni starts, so I might as well give it a go"*
 
 So off I went to make it.
 

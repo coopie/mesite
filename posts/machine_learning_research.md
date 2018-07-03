@@ -3,7 +3,7 @@
     "title": "Some Rules I Try To Keep To When Researching",
     "date": "2017-09-03",
     "style": {
-        "color1": "#55d284",
+        "color1": "rgb(64, 132, 89)",
         "color2": "#f2cf07"
     }
 }

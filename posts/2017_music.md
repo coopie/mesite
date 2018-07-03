@@ -4,7 +4,7 @@
     "date": "2017-12-12",
     "footer": "And now after some thinking, I'd say I'd rather be: A functioning cog in some great machinery serving something beyond me",
     "style": {
-        "color1": "#55d284",
+        "color1": "#1db954",
         "color2": "#f2cf07"
     }   
 }

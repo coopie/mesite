@@ -3,7 +3,7 @@
     "title": "Slices Of 3D Models: Almost Looks like Art",
     "date": "2016-10-29",
     "style": {
-        "color1": "#fe5858",
+        "color1": "rgb(173, 53, 53)",
         "color2": "#ee9617"
     }
 }

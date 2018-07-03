@@ -1,20 +1,28 @@
 :root {
-  --color10: rgb(252,224,67);
-  --color9: rgb(252,214,77);
-  --color8: rgb(252,204,86);
-  --color7: rgb(252,194,96);
-  --color6: rgb(252,184,105);
-  --color5: rgb(252,174,115);
-  --color4: rgb(251,163,124);
-  --color3: rgb(251,153,134);
-  --color2: rgb(251,143,143);
-  --color1: rgb(251,133,153);
-  --color0: rgb(251,123,162);
+  --color10: #e9e7fb;
+  --color9: #585877;
+  --color8: #585877;
+  --color7: #585877;
+  --color6: #585877;
+  --color5: #585877;
+  --color4: #585877;
+  --color3: #585877;
+  --color2: #585877;
+  --color1: #585877;
+  --color0: #e9e7fb;
+
+  --postwidth: 750px;
+}
+
+@media only screen and (max-width:1000px) {
+    :root {
+        --postwidth: calc(100% - 16px);
+    }
 }
 
 body {
     font-family: "Helvetic Neue", sans-serif;
-    font-size: 16px;
+    font-size: 1em;
     color: #52474b;
     margin: 0px 0px 0px 0px;
 }
@@ -33,7 +41,7 @@ h3 {
 }
 
 p , li{
-    line-height: 150%;
+    line-height: 170%;
 }
 li {
     padding-bottom: 10px;
@@ -76,13 +84,13 @@ blockquote {
 }
 
 .mainContent {
-    width: 750px ;
+    width: var(--postwidth) ;
     margin-left: auto ;
     margin-right: auto ;
 }
 
 .mainContent h1 {
-    color: var(--color0);
+    color: var(--color1);
 }
 .mainContent h2 {
     color: var(--color2);
@@ -116,6 +124,16 @@ header.pageHeader {
     border-radius: 10px;
 }
 
+.mainContent video {
+    width: var(--postwidth);
+    max-width: 500px;
+}
+
+.videoContainer {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
 
 img#myHeaderPicture {
     height: 60px;
@@ -132,7 +150,7 @@ span#titleText {
     text-align: center;
 }
 .footerContent {
-    width: 700px ;
+    width: var(--postwidth) ;
     margin-left: auto ;
     margin-right: auto ;
     padding: 0px 0px;
@@ -140,23 +158,22 @@ span#titleText {
     text-align: center;
 }
 a:link {
-    color: var(--color0);
+    color: var(--color1);
     text-decoration: none;
 }
 a:visited {
-    color: var(--color3);
+    color: var(--color4);
     text-decoration: none;
 }
 a:hover {
     color: var(--color6);
 }
 a:active {
-    color: var(--color10)};
-    background-color: var(--color0);
+    color: var(--color10);
 }
 
 a.samLink:link {
-    color: var(--color0);
+    color: var(--color1);
     text-decoration: none;
 }
 a.samLink:visited {
