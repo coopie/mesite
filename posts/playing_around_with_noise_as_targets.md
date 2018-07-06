@@ -18,6 +18,12 @@ style="width:var(--postwidth); height:var(--postwidth)%">
     <source src="//i.imgur.com/Cgx9q4T.mp4" type="video/mp4">
 </video> -->
 
+<img src="https://media.giphy.com/media/L07xN1Awvr6yfdVigS/giphy.gif" style="filter: brightness(250%);padding-bottom:5px;" alt="">
+
+<div align="center"> The LeDistribution - as mapped from a 100-dimensional $N(0, I)$ </div>
+
+---
+
 bibtex reference :D
 
 code is avaliable - with myself working on documentation/more experiments in the near future
@@ -90,6 +96,11 @@ therefore the model is the compression of the image
 
 ### Experiment 2 - Mapping MNIST Onto Donald Duck
 
+[link with sprites](https://projector.tensorflow.org/?config=https://gist.githubusercontent.com/coopie/cc1112863687995287f83f22593202b9/raw/1a8d05b0d5c369c792c5de1caa689d7a1135e779/config.json)
+
+ [link with no sprites](https://projector.tensorflow.org/?config=https://gist.githubusercontent.com/coopie/cc1112863687995287f83f22593202b9/raw/ec47b8a3fd514162b748eb395d34029c25b975a7/config_no_sprite.json)
+
+
 show that this can also work complex distributions, such as images
 
 <div class="videoContainer">
@@ -100,10 +111,16 @@ show that this can also work complex distributions, such as images
 
 ## Problems/Improvements with the work
 
-* adressing overfitting in the model
-* hungarian algorithm is pretty slow
-* scaling to larger noise datasets
-* Mathematical analysis of the NAT framework - using it as a wasserstein distance for VAEs
+### The Hungarian Algorithm is A Performance Bottleneck
+
+PARTLYY BECAUSE THE MODELS ARE SUPER SMALL -
+
+### Scaling to Larger Datasets
+
+128K IS ABOUT THE SWEET SPOT
+
+### The NAT Models Partly Overfit The Training Data
+
 
 ## Come Join me
 

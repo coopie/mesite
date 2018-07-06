@@ -2,11 +2,11 @@
 {}
 ---
 
-Hello.
+# Hello.
 
 <img src="/resource/images/face-drawing1.jpg" width="inherit">
 
-The name's Sam, and I'm from the shire , Worcestershire to be precise, about ten minutes away from Tolkien's house.
+I'm Sam Coope, a, machine learning researcher from Birmingham, England.
 
 As many do, I moved to somewhere else to study. For me that place was West London, to study computing at Imperial College London. I now live in in London working as a deep learning researcher for [DigitalGenius](https://www.digitalgenius.com/).
 
@@ -20,7 +20,7 @@ For the last few years, I have specialized in deep learning with a sub-specializ
 
 
 ### Programming
-I don't think any other commercial or academic field has such a fast moving and beaureaucratic-less community as programmers do. Learning about new technologies, and the mathematics behind them, is one of my favorite pastimes.
+I don't think any other commercial or academic field has such a fast moving and bureaucratic-less community as programmers do. Learning about new technologies, and the mathematics behind them, is one of my favourite pastimes.
 
 I have a hobby of doing random things with functional programming languages, such as haskell and scala, and am of the belief that the future of programming lies in immutable data and functional programming.
 

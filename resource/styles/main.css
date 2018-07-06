@@ -31,13 +31,14 @@ h1, h2, h3, h4 {
     font-weight: 400;
 }
 h1 {
-    font-size: 36;
+    font-size: 2.2em;
 }
 h2 {
-    font-size: 28;
+    font-size: 1.8em;
 }
 h3 {
-    font-size: 24;
+    /*font-size: 24;*/
+    font-size: 1.5em;
 }
 
 p , li{
@@ -121,7 +122,8 @@ header.pageHeader {
 
 .mainContent img {
     width: 100%;
-    border-radius: 10px;
+    /*border-radius: 10px;*/
+    border-radius: 5px;
 }
 
 .mainContent video {
