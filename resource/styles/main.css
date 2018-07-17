@@ -2,11 +2,11 @@
   --color10: #e9e7fb;
   --color9: #585877;
   --color8: #585877;
-  --color7: #585877;
+  --color7: #2d0bc1;
   --color6: #585877;
-  --color5: #585877;
+  --color5: #2d0bc1;
   --color4: #585877;
-  --color3: #585877;
+  --color3: #2d0bc1;
   --color2: #585877;
   --color1: #585877;
   --color0: #e9e7fb;
@@ -82,6 +82,15 @@ blockquote {
 #mainWindow {
     overflow: auto;
     padding-bottom: 60px
+}
+
+#titleText {
+    color: var(--color4);
+}
+
+.samLink{
+    color: #585877;
+    text-decoration: none;
 }
 
 .mainContent {
@@ -160,26 +169,26 @@ span#titleText {
     text-align: center;
 }
 a:link {
-    color: var(--color1);
+    color: var(--color3);
     text-decoration: none;
 }
 a:visited {
-    color: var(--color4);
+    color: var(--color5);
     text-decoration: none;
 }
 a:hover {
-    color: var(--color6);
+    color: var(--color7);
 }
 a:active {
     color: var(--color10);
 }
 
 a.samLink:link {
-    color: var(--color1);
+    color: var(--color3);
     text-decoration: none;
 }
 a.samLink:visited {
-    color: var(--color2);
+    color: var(--color3);
     text-decoration: none;
 }
 a.samLink:hover {

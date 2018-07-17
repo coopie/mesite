@@ -5,7 +5,8 @@
     "style": {
         "color1": "rgb(241, 100, 80)",
         "color2": "rgb(91, 96, 160)"
-    }
+    },
+    "footer": ""
 }
 ---
 
@@ -13,32 +14,47 @@
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
 </script>
-<!-- <video poster="//i.imgur.com/Cgx9q4Th.jpg" preload="auto" autoplay="autoplay" muted="muted" webkit-playsinline=""
-style="width:var(--postwidth); height:var(--postwidth)%">
-    <source src="//i.imgur.com/Cgx9q4T.mp4" type="video/mp4">
-</video> -->
+<video poster="//i.imgur.com/TNxvwByh.jpg" preload="auto" autoplay="autoplay" muted="muted" loop="loop" webkit-playsinline="" style="width: var(--postwidth); height: calc(height);padding-bottom:5px;max-width: var(--postwidth);">
+<source src="//i.imgur.com/TNxvwBy.mp4" type="video/mp4">
+</video>
 
-<img src="https://media.giphy.com/media/L07xN1Awvr6yfdVigS/giphy.gif" style="filter: brightness(250%);padding-bottom:5px;" alt="">
+<div align="center">
 
-<div align="center"> The LeDistribution - as mapped from a 100-dimensional $N(0, I)$ </div>
+(Yann Lecun) *Learning The LeDistribution*
+
+Recording the learned mapping from a 256-dimensional $N(0, I)$ to a 2D distribution
+</div>
 
 ---
 
-bibtex reference :D
+<!-- ```latex
+@article{NATForImages,
+  author = {Sam Coope},
+  title = {Playing Around With Noise As Targets},
+  journal = {Sam Coope's Personal Blog},
+  year = {2018},
+  note = {https://www.samcoope.com/posts/playing_around_with_noise_as_targets},
+  doi = {GET FIRST VERSION AS A PDF TO DOWNLOAD}
+}
+``` -->
 
-code is avaliable - with myself working on documentation/more experiments in the near future
+For the last year or so, I have been experimenting with the Noise as Target (NAT) framework. It's a mechanism which can train a model to map from one probability distribution to another. Recently I have been seeing if NAT could be used as a form of image compression, where a model learns to map Gaussian Noise to a 2D distribution of a monochrome image. It's a long way off from being competitive in memory reduction, but I think the results are interesting in their own right - and at least nice to look at.
 
-HOW DO YOU MAP FROM ONE DISTRIBUTION TO ANOTHER
-
-NORMAL EXAMPLE WITH PYTHON
+[All the code is open sourced for those who which to make their own NAT image.](https://github.com/coopie/vae-nat)
 
 
 ## Noise As Targets (NAT)
 
-NAT was first introduced in [Unsupervised Learning by Predicting Noise (Bojanowski, Joulin)](https://arxiv.org/abs/1704.05310) in April 2017. Since then, there has not been a lot of published research using this method. The training method aims learn a mapping $f_\theta$ from an input distribution $X$ to a target distribution $Y$. What makes this different to typical classification or regression problems is that there are no explicit labels from $X$ to $Y$. It does this by taking large (equally sized) samples from $X$ and $Y$, and learns an one-to-one assignment from each $x$ to a $y$ *during* training. In short, the training consists of objectives:
+NAT was first introduced in [Unsupervised Learning by Predicting Noise (Bojanowski, Joulin)](https://arxiv.org/abs/1704.05310) in April 2017. The training method aims learn a mapping $f_\theta$ from an input distribution $X$ to a target distribution $Y$. What makes this different to typical classification or regression problems is that there are no explicit labels from $X$ to $Y$ - they also have to be learned.
 
-1. $f_\theta$ should effectively map $x$s to their corresponding $y$s, i.e. minimize $\|\| f\theta(X) - Y \|\|$.
-2. Find a one-to-one assignment from each $x$ to a $y$ to help with (1.).
+NAT works by taking large (equally sized) samples from $X$ and $Y$, and learns a one-to-one assignment from each input $x$ to an output $y$ *during* training. In short, the training consists of two objectives:
+
+1. Effectively map $x$s to their corresponding $y$s, i.e. minimize $\sum_{i=1}^{|X|} \|\| f\theta(x_i) - y_i \|\|$.
+2. Find a one-to-one assignment from each $x$ to a $y$ i.e. find a permutation of the original Y which
+
+If a model is able to effectively learn the objective, it follows that the model is a stateless map from $X$ to $Y$, i.e:
+
+$$f_\theta(X) \sim Y$$
 
 
 For my experiments (and those in the original paper), the mapping $f_\theta$ is a deep neural network,
@@ -56,12 +72,12 @@ To help better explain, I'll use an example of mapping from an arbitrary distrib
 
 First, we select a random batch of $x$s along with their corresponding $y$s and compute the forward pass of the mapping. I'll call the output of the mapping for a $x_i$ $z_i$.
 Additionally, we "forget" the assignments from each $x$ to $y$ in the batch and find the best possible assignment.
- The $z$s and $y$s for the example are mapped as follows ($y$s are the red dots):
+ The $z$s and $y$s for the example are located as follows ($y$s are the red dots):
 
 ![](https://i.imgur.com/rUSyrzI.jpg)
 
 We consider the best possible assignment in the batch to be when the *total distance* from each $z$ to their newly assigned $y$ is smallest.
-To do this, we use the [hungarian method](https://en.wikipedia.org/wiki/Hungarian_algorithm). The algorithm is an $O(n^3)$ complexity and finds which one-to-one assignments minimize the total cost of the system. In this case, the cost is the euclidean distance between an $x$ and a $y$. Below shows the optimal assignments in the example batch:
+To do this, we use the [hungarian method](https://en.wikipedia.org/wiki/Hungarian_algorithm). The algorithm is an $O(n^3)$ complexity and finds which one-to-one assignments minimize the total cost of the system. In this case, the cost is the euclidean distance between an $z$ and a $y$. Below shows the optimal assignments in the example batch:
 
 ![](https://i.imgur.com/VpFljMQ.jpg)
 
@@ -76,7 +92,7 @@ $$
 We can then use this loss to train the mapping network via backpropagation. Although the process of re-assigning targets is not differentiable, *the loss still is*.
 
 
-If you want to learn more about NAT, I recommend reading the paper. [Ferenc Huszár's blog post on the paper](https://www.inference.vc/unsupervised-learning-by-predicting-noise-an-information-maximization-view-2/) and [a video myself and a good friend made.](https://www.youtube.com/watch?v=CkSVb1ZMlnU) might also be useful.
+If you want to learn more about NAT, I recommend reading the paper. [Ferenc Huszár's blog post on the paper](https://www.inference.vc/unsupervised-learning-by-predicting-noise-an-information-maximization-view-2/) and [a video myself and a good friend made](https://www.youtube.com/watch?v=CkSVb1ZMlnU) might also be useful.
 
 ## Using Noise As Targets For Learning Distributions Of Monochrome Images
 
@@ -129,3 +145,11 @@ If anyone is interested in working on these problems with myself, feel free to e
 The end goal of this work is to find a real-world use case where NAT is an effective tool
 
 Hopefully, this work will be good enough to make it into the likes of NIPs or ICLR if published.
+
+
+Additionally, if you have any feedback on this article - if you found a part of it confusing or poorly exaplained -  I would really like to hear from you.
+
+Send emails to:
+```
+sam DOT j DOT coope  AT  gmail DOT com
+```

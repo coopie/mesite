@@ -83,13 +83,13 @@ function buildPost(postName) {
 
 function buildIndex() {
     var aboutAndGithub =
-    '<span style="text-align:center">' +
+    '<span style="text-align:center" id="indexLinks">' +
         '<h3>' +
-            '<a href="https://github.com/coopie" class="samLink">github</a>' +
+            '<a href="https://github.com/coopie"><span class="samLink">github</span></a>' +
             ' · ' +
-            '<a href="/about" class="samLink">about me</a>' +
+            '<a href="/about"><span class="samLink">about me</span></a>' +
             ' · ' +
-            '<a href="https://www.instagram.com/cahooop/" class="samLink">instagram</a>' +
+            '<a href="https://www.instagram.com/cahooop/"><span class="samLink">instagram</span></a>' +
         '</h3>' +
     '</span>';
 
