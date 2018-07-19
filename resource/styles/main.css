@@ -11,7 +11,7 @@
   --color1: #585877;
   --color0: #e9e7fb;
 
-  --postwidth: 750px;
+  --postwidth: 720px;
 }
 
 @media only screen and (max-width:1000px) {
@@ -112,9 +112,9 @@ blockquote {
     color: var(--color6);
 }
 .mainContent hr {
-    border: none;
     height: 1px;
-    background-color: var(--color0);
+    border: 0;
+    background-image: linear-gradient(to right, var(--color0), var(--color10));
 }
 header.pageHeader {
     border-width: 10px 0 2px 0;
@@ -131,13 +131,11 @@ header.pageHeader {
 
 .mainContent img {
     width: 100%;
-    /*border-radius: 10px;*/
     border-radius: 5px;
 }
 
 .mainContent video {
     width: var(--postwidth);
-    max-width: 500px;
 }
 
 .videoContainer {
