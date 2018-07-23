@@ -92,6 +92,8 @@ $$
 
 We can then use this loss to train the mapping network via backpropagation. Although the process of re-assigning targets is not differentiable, *the loss still is*.
 
+Just like other deep learning methods, this training step is repeated until convergence. Each time, a random batch of $x$s and their corresponding $y$s are chosen, with $y$s being re-assigned each time to find "smoother" assignments.
+
 
 If you want to learn more about NAT, I recommend reading the paper. [Ferenc Huszár's blog post on the paper](https://www.inference.vc/unsupervised-learning-by-predicting-noise-an-information-maximization-view-2/) and [a video myself and a good friend made](https://www.youtube.com/watch?v=CkSVb1ZMlnU) might also be useful.
 
@@ -100,6 +102,8 @@ If you want to learn more about NAT, I recommend reading the paper. [Ferenc Husz
 A monochrome image can be seen as a 2D probability distribution, where the areas of higher density correspond to whiter areas in an image. In my experiments, I have taken the range to be $[0, 1]$ for both dimensions. As we are using NAT in this approach, we are concerned with large collections of 2D points which are very large samples of a probability distribution.
 
 The image of the sample is a 2D histogram, where the buckets of the histogram are all equal length (the length of a bucket is $\frac{1}{\text{pixel width}}$)
+
+The original idea for doing this was for image compression: Given a model which can map Gaussian noise well to an image "distribution", the compression of the image *is* the model. To reconstruct the image, simply feed Gaussian noise to the model and record how the model distributes it's output.
 
 As an example, here is what a 2 Dimensional normal distribution with mean $(0.5, 0.5)$ and standard-deviation 0.5 looks like (using 1 million samples):
 
@@ -152,9 +156,7 @@ If anyone is interested in working on these problems with myself, feel free to e
 
 The end goal of this work is to find a real-world use case where NAT is an effective tool, and to investigate it's efficacy compared to other methods similar to it such as [adversarial autoencoders](https://arxiv.org/abs/1511.05644).
 
-Hopefully, this work will be good enough to make it into the likes of NIPs or ICLR if published.
-
-Additionally, if you have any feedback on this article - if you found a part of it confusing or poorly explained -  I would really like to hear from you.
+Additionally, if you have any feedback on this article - if you found a part of it confusing or poorly explained -  I would also like to hear from you.
 
 Send emails to:
 ```

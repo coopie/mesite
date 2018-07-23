@@ -8,7 +8,7 @@
 
 I'm Sam Coope, a, machine learning researcher from Birmingham, England.
 
-As many do, I moved to somewhere else to study. For me that place was West London, to study computing at Imperial College London. I now live in in London working as a deep learning researcher for [DigitalGenius](https://www.digitalgenius.com/).
+As many do, I moved to somewhere else to study. For me that place was West London, to study computing at Imperial College London. I now live in in London working as a machine learning engineer for [Poly AI](http://www.poly-ai.com/), formerly at [DigitalGenius](https://www.digitalgenius.com/).
 
 ## What I Like
 
@@ -18,6 +18,7 @@ Be they films, music, cartoons or video games, I love consuming and discussing m
 ### Deep Learning
 For the last few years, I have specialized in deep learning with a sub-specialization in language, be it programming languages or natural language. I am very interested in novel approaches to language generation, such as translation, summarization and also generative models.
 
+Outside of language, I'm also interested in more fundamental deep learning research, such as [clustering](https://openreview.net/forum?id=BJvVbCJCb) and other unsupervised methods.
 
 ### Programming
 I don't think any other commercial or academic field has such a fast moving and bureaucratic-less community as programmers do. Learning about new technologies, and the mathematics behind them, is one of my favourite pastimes.
