@@ -22,7 +22,7 @@
 
 (Yann Lecun) *Learning The LeDistribution*
 
-Recording the learned mapping from a 256-dimensional $N(0, I)$ to a 2D distribution
+Recording the learned mapping from a 256-dimensional $N(0, I)$ to a 2D "image" distribution
 </div>
 
 ---
@@ -38,7 +38,7 @@ Recording the learned mapping from a 256-dimensional $N(0, I)$ to a 2D distribut
 }
 ``` -->
 
-For the last year or so, I have been experimenting with the Noise as Target (NAT) framework. It's a mechanism which can train a model to map from one probability distribution to another. Recently I have been seeing if NAT could be used as a form of image compression, where a model learns to map Gaussian Noise to a 2D distribution of a monochrome image. It's a long way off from being competitive in memory reduction, but I think the results are interesting in their own right - and at least nice to look at.
+For the last year or so, I have been experimenting with the Noise as Target (NAT) framework. It's a mechanism which can train a model to map from one probability distribution to another. Recently I have been exploring if NAT could be used as a form of image compression, where a model learns to map Gaussian Noise to a 2D distribution of a monochrome image. It's a long way off from being competitive in memory reduction, but I think the results are interesting in their own right - and at least nice to look at.
 
 [All the code is open sourced for those who which to make their own NAT image.](https://github.com/coopie/vae-nat)
 
