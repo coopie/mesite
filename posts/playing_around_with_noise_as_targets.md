@@ -38,10 +38,9 @@ A recording of the learned mapping from a 256-dimensional $N(0, I)$ to a 2D "ima
 }
 ``` -->
 
-For the last year or so, I have been experimenting with the Noise as Target (NAT) framework<sup><a href="#fn1" id="ref1">1</a></sup>. It's a mechanism which can train a model to map one probability distribution to another without any labels. These distributions could be (technically) anything - Images of cats to Gaussian noise, French sentences to English sentences etc.
+For the last year or so, I have been experimenting with the Noise as Target (NAT) framework<sup><a href="#fn1" id="ref1">1</a></sup>. It's a mechanism which can train a model to map one probability distribution to another without any labels. These distributions could be (technically) anything: Images of cats to Gaussian noise, French sentences to English sentences etc.
 
-Recently I have been exploring if NAT could be used to teach a model to "learn" a monochrome image - by mapping Gaussian Noise to the 2D distribution of a the image.
-
+Recently I have been exploring if NAT could be used to teach a model to "learn" a monochrome image by mapping Gaussian noise to the 2D distribution of a the image.
 It's a long way off from being photorealistic, but I think the results are interesting in their own right - and at least nice to look at.
 
 [All the code is open sourced for those who which to make their own NAT image.](https://github.com/coopie/nat_playground)
@@ -54,7 +53,7 @@ NAT was first introduced in [Unsupervised Learning by Predicting Noise (Bojanows
 NAT works by taking large (equally sized) samples from $X$ and $Y$ (noted as $\overline{X}$ and $\overline{Y}$), a $\text{loss}$ function, and learns a one-to-one assignment from each input $x$ to an output $y$ *during* training. In short, the training consists of two objectives:
 
 1. Effectively map $x$s to their corresponding $y$s, i.e. minimize $\sum_{i=1}^{|\overline{X}|} \text{loss}(f\theta(x_i), y_i )$.
-2. Starting with random assignments between $\overline{X}$ and $\overline{Y}$ Find a one-to-one assignment from each $x$ to a $y$ which helps with (1.).
+2. Starting with random assignments between $\overline{X}$ and $\overline{Y}$, find a one-to-one assignment from each $x$ to a $y$ which helps with (1.).
 
 If a model is able to effectively do this, it follows that the model closely approximates a map from $X$ to $Y$, i.e:
 
@@ -70,7 +69,7 @@ but any machine learning framework that can be trained in a supervised manner us
 Along with initializing the parameters of a model, randomly assign each $x$ in the training data to a $y$. These are the initial assignments in the model.
 
 
-### Training a NAT Model: Train step
+### Training a NAT Model: Train Step
 
 To help better explain, I'll use an example of mapping from an arbitrary distribution $X$ to a 2-dimensional distribution $Y$. This example uses a batch size of 5.
 
@@ -101,7 +100,7 @@ Just like other deep learning methods, this training step is repeated until the 
 
 If you want to learn more about NAT, I recommend reading the paper. [Ferenc Huszár's blog post on the paper](https://www.inference.vc/unsupervised-learning-by-predicting-noise-an-information-maximization-view-2/) and [a video myself and a good friend made](https://www.youtube.com/watch?v=CkSVb1ZMlnU) might also be useful.
 
-## Using Noise As Targets For Learning Distributions Of Monochrome Images
+## Using NAT For Learning Distributions of Monochrome Images
 
 A monochrome image can be seen as a 2D probability distribution, where the areas of higher density correspond to whiter areas in an image. In my experiments, I have taken the range to be $[0, 1]$ for both dimensions of the image, i.e. all points exist between $(0,0)$ and $(1,1)$.
 
@@ -109,19 +108,19 @@ As we are using NAT in this approach, we are concerned with large samples of 2D 
 
 We can reconstruct a monochrome image from a sample of points using a 2D histogram, where the buckets of the histogram are all equal length (the length of a bucket is $\frac{1}{\text{pixel width}}$).
 
-As an example, here is what a 2 Dimensional normal distribution with mean $(0.5, 0.5)$ and standard-deviation 0.5 looks like (using 1 million samples):
+As an example, here is what a 2 Dimensional normal distribution with mean $(0.5, 0.5)$ and standarddeviation 0.5 looks like (using 1 million samples):
 
 ![](https://i.imgur.com/P7vHjxr.png)
 
-The original idea for doing this was for image compression: Given a model which can map Gaussian noise to an image "distribution" effectively, the compression of the image *is* the model. To reconstruct the image, simply feed Gaussian noise to the model and record how the model distributes it's output.
+The original idea for doing this was for image compression: given a model which can map Gaussian noise to an image "distribution" effectively, the compression of the image *is* the model. To reconstruct the image, simply feed Gaussian noise to the model and record how the model distributes it's output.
 
 ## Some Demos
 
-For most of my experiments, I have been using high-dimensional Gaussian Noise as the input, and sampled noise from a monochrome "distribution" as the targets. Details can be found in the codebase.
+For most of my experiments, I have been using high-dimensional Gaussian noise as the input, and sampled noise from a monochrome "distribution" as the targets. Details can be found in the codebase.
 
 The below videos are recorded as each model is being trained. After a few training steps, I record the total output of the network from the training inputs, and create an image from the $z$s computed - each image being a frame in the video.
 
-### Early Progress: Learning A Complex Image From Gaussian Noise
+### Early Progress: Learning a Complex Image from Gaussian Noise
 ``
 <div class="videoContainer">
 <video controls="true" poster="//i.imgur.com/Cgx9q4Th.jpg" preload="auto" autoplay="autoplay" muted="muted" loop="loop" webkit-playsinline="">
@@ -129,12 +128,12 @@ The below videos are recorded as each model is being trained. After a few traini
 </video>
 </div>
 
-This was the first non trivial image that I got working. Previous to this image, only simple shapes (circles, dots etc.) seemed to work. The trick was to update the assignments between each training step. Prior to this, I was only updating assignments every other epoch.
+This was the first image that I got working which wasn't something simple (circles, dots, etc.). . The trick was to update the assignments between each training step. Prior to this, I was only updating assignments every other epoch.
 
-This target image is a picture of myself sampled with 64,000 points, using 128-dimensional Gaussian Noise and a 2-layer MLP with hidden sizes of 128.
+This target image is a picture of myself sampled with 64,000 points, using 128-dimensional Gaussian noise and a 2-layer MLP with a hidden size of 128.
 
 
-### Mapping MNIST Onto Donald Duck
+### Mapping MNIST onto Donald Duck
 
 <div class="videoContainer">
 <video controls="true" poster="//i.imgur.com/1uXoCggh.jpg" preload="auto" autoplay="autoplay" muted="muted" loop="loop" webkit-playsinline="">
@@ -154,7 +153,7 @@ You can see how it's mapped on the [tensorflow embedding projector](https://proj
 
 Early on, the NAT models could not scale to large number of points. It seems that the problem was that the models found minima before "good" assignments were learned causing blurry images. The solution was to reduce the learning rate by a factor of ten, allowing the assignments to "keep pace" with the model learning.
 
-Although it took much longer to train (this model took 3 days), this is a promising sign that NAT could work at a very large scale. This image used 256-dimensional Gaussian Noise, and 512,000 sampled points from the image.
+Although it took much longer to train (this model took 3 days), this is a promising sign that NAT could work at a very large scale. This image used 256-dimensional Gaussian noise, and 512,000 sampled points from the image.
 
 
 In a later post, I'll talk in more depth around the issues that NAT has, namely performance bottlenecks and training tradeoffs.
@@ -162,7 +161,7 @@ In a later post, I'll talk in more depth around the issues that NAT has, namely 
 
 ## Join In
 
-If anyone is interested in working on these problems with myself, feel free to email me with the work you would be interested in. This is one of many NAT projects that I have worked on, for example my team at Digital Genius experimented with it's use in [agglomerative clustering](https://openreview.net/pdf?id=BJvVbCJCb)
+If anyone is interested in working on these problems with myself, feel free to email me with the work you would be interested in. This is one of many NAT projects that I have worked on, for example my team at [DigitalGenius](https://www.digitalgenius.com/) experimented with its use in [agglomerative clustering](https://openreview.net/pdf?id=BJvVbCJCb).
 
 The end goal of this work is to find a real-world use case where NAT is an effective tool, and to investigate it's efficacy compared to other methods similar to it such as [adversarial autoencoders](https://arxiv.org/abs/1511.05644).
 
