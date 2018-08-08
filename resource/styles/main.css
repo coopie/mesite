@@ -13,16 +13,60 @@
 
   --postwidth: 720px;
 }
-
+/*  styles for mobile*/
 @media only screen and (max-width:1000px) {
     :root {
-        --postwidth: calc(100% - 16px);
+        --postwidth: calc(100% - 32px);
     }
+    body {
+        font-size: 2em;
+    }
+    h1 {
+        font-size: 3.8em;
+    }
+    h2 {
+        font-size: 3.2em;
+    }
+    h3 {
+        font-size: 2.8em;
+    }
+
+    #myBtn {
+        font-size: 2.8em;
+        top: 60px;
+        bottom: none;
+        padding: 10px;
+        border-radius: 50px;
+    }
+}
+
+@media only screen and (min-width:1000px) {
+    #myBtn {
+        bottom: 100px;
+        font-size: xx-large;
+        border-radius: 50px;
+        padding: 5px;
+        border-radius: 20px;
+    }
+}
+
+#myBtn {
+    display: none;
+    position: fixed;
+    right: 100px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: #999;
+    color: white;
+    cursor: pointer;
+}
+#myBtn:hover {
+    background-color: #555;
 }
 
 body {
     font-family: "Helvetic Neue", sans-serif;
-    font-size: 1em;
     color: #52474b;
     margin: 0px 0px 0px 0px;
 }
@@ -38,7 +82,7 @@ h2 {
 }
 h3 {
     /*font-size: 24;*/
-    font-size: 1.5em;
+    font-size: 1.8em;
 }
 
 p , li{
@@ -162,7 +206,7 @@ span#titleText {
     width: var(--postwidth) ;
     margin-left: auto ;
     margin-right: auto ;
-    padding: 0px 0px;
+    padding: 0px 0px 12px 0px;
     color: #8a8a8a;
     text-align: center;
 }
@@ -215,23 +259,4 @@ a.samLink:active {
     height: 60px;
     clear:both;
     font-family: "Helvetica Neue";
-}
-
-#myBtn {
-    display: none; /* Hidden by default */
-    position: fixed; /* Fixed/sticky position */
-    bottom: 100px; /* Place the button at the bottom of the page */
-    right: 100px; /* Place the button 30px from the right */
-    z-index: 99; /* Make sure it does not overlap */
-    border: none; /* Remove borders */
-    outline: none; /* Remove outline */
-    background-color: #999; /* Set a background color */
-    color: white; /* Text color */
-    cursor: pointer; /* Add a mouse pointer on hover */
-    padding: 5px; /* Some padding */
-    border-radius: 20px; /* Rounded corners */
-    font-size: xx-large;
-}
-#myBtn:hover {
-    background-color: #555;
 }

@@ -8,7 +8,7 @@
 
 I'm Sam Coope, a, machine learning researcher from Birmingham, England.
 
-As many do, I moved to somewhere else to study. For me that place was West London, to study computing at Imperial College London. I now live in in London working as a machine learning engineer for [Poly AI](http://www.poly-ai.com/), formerly at [DigitalGenius](https://www.digitalgenius.com/).
+As many do, I moved to somewhere else to study. For me that place was West London, to study computing at Imperial College London. I now live in in London working as a machine learning engineer for [polyAI](http://www.poly-ai.com/), formerly at [DigitalGenius](https://www.digitalgenius.com/).
 
 ## What I Like
 
