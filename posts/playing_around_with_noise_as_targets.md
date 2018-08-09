@@ -128,7 +128,7 @@ The below videos are recorded as each model is being trained. After a few traini
 </video>
 </div>
 
-This was the first image that I got working which wasn't something simple (circles, dots, etc.). . The trick was to update the assignments between each training step. Prior to this, I was only updating assignments every other epoch.
+This was the first image that I got working which wasn't something simple (circles, dots, etc.). The trick was to update the assignments between each training step. Prior to this, I was only updating assignments every other epoch.
 
 This target image is a picture of myself sampled with 64,000 points, using 128-dimensional Gaussian noise and a 2-layer MLP with a hidden size of 128.
 
