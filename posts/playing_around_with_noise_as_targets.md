@@ -156,9 +156,6 @@ Early on, the NAT models could not scale to large number of points. It seems tha
 Although it took much longer to train (this model took 3 days), this is a promising sign that NAT could work at a very large scale. This image used 256-dimensional Gaussian noise, and 512,000 sampled points from the image.
 
 
-In a later post, I'll talk in more depth around the issues that NAT has, namely performance bottlenecks and training tradeoffs.
-
-
 ## Join In
 
 If anyone is interested in working on these problems with myself, feel free to email me with the work you would be interested in. This is one of many NAT projects that I have worked on, for example my team at [DigitalGenius](https://www.digitalgenius.com/) experimented with its use in [agglomerative clustering](https://openreview.net/pdf?id=BJvVbCJCb).
