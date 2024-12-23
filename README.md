@@ -1,3 +1,3 @@
 # mesite
 My personal website, built from scratch.
-is is hosted [here](www.samcoope.com)
+It was hosted [here](www.samcoope.com) but I have stopped hosting it as I've not contributed to it in a while
